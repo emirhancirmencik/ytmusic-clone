@@ -1,0 +1,18 @@
+@tailwind base;
+@tailwind utilities;
+@tailwind components;
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,500;1,700&display=swap');
+
+@layer base{
+  html,body, #root{
+    font-family: 'Roboto', sans-serif;
+    @apply h-full bg-black4 text-white text-lg 
+  }
+  #root{
+    @apply flex flex-col
+  }
+  .content{
+    height: calc(100% - theme('spacing.20'))
+  }
+}
