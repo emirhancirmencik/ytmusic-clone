@@ -583,12 +583,12 @@ html, body,  #root {
   margin-left: 2px;
 }
 
-.mt-2 {
-  margin-top: 0.5rem;
-}
-
 .ml-2 {
   margin-left: 0.5rem;
+}
+
+.mt-2 {
+  margin-top: 0.5rem;
 }
 
 .box-border {
@@ -678,10 +678,6 @@ html, body,  #root {
   padding-left: 5rem;
 }
 
-.pr-5 {
-  padding-right: 1.25rem;
-}
-
 .text-\[22px\] {
   font-size: 22px;
 }
@@ -706,6 +702,11 @@ html, body,  #root {
 .text-lightthemetext {
   --tw-text-opacity: 1;
   color: rgb(33 33 33 / var(--tw-text-opacity));
+}
+
+.text-white {
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity));
 }
 
 .hover\:text-white:hover {

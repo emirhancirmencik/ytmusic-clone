@@ -1,13 +1,16 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 function CenterContent(props) {
   return (
-    <Link to={`${props.link ? props.link : props.children.toLowerCase()}`}>
+    <NavLink
+      to={`${props.link ? props.link : props.children.toLowerCase()}`}
+      className={({ isActive }) => (isActive ? "text-white" : undefined)}
+    >
       <div className={`mx-5 mt-2 cursor-pointer hover:text-white`}>
         {props.children}
       </div>
-    </Link>
+    </NavLink>
   );
 }
 
