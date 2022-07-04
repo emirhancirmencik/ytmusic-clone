@@ -19,7 +19,6 @@ const settingsIcon = ({ sizex, sizey }) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      fill="rgb(255,255,255,0.5)"
       viewBox="0 0 24 24"
       width={sizex}
       height={sizey}
@@ -98,6 +97,50 @@ const miniLogo = ({ sizex, sizey }) => {
     </svg>
   );
 };
+const prevIcon = ({ sizex, sizey }) => {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      fill="rgb(255,255,255,0.5)"
+      viewBox="0 0 24 24"
+      width={sizex}
+      height={sizey}
+    >
+      <path
+        d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"
+        fill="currentColor"
+      />
+    </svg>
+  );
+};
+
+const castIcon = ({ sizex, sizey }) => {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      fill="rgb(255,255,255,0.5)"
+      viewBox="0 0 24 24"
+      width={sizex}
+      height={sizey}
+    >
+      <path d="M16.94 6.9l-1.4 1.46C16.44 9.3 17 10.58 17 12s-.58 2.7-1.48 3.64l1.4 1.45C18.22 15.74 19 13.94 19 12s-.8-3.8-2.06-5.1zM23 12c0-3.12-1.23-5.95-3.23-8l-1.4 1.45C19.97 7.13 21 9.45 21 12s-1 4.9-2.64 6.55l1.4 1.45c2-2.04 3.24-4.87 3.24-8zM7.06 17.1l1.4-1.46C7.56 14.7 7 13.42 7 12s.6-2.7 1.5-3.64L7.08 6.9C5.78 8.2 5 10 5 12s.8 3.8 2.06 5.1zM1 12c0 3.12 1.23 5.95 3.23 8l1.4-1.45C4.03 16.87 3 14.55 3 12s1-4.9 2.64-6.55L4.24 4C2.24 6.04 1 8.87 1 12zm9-3.32v6.63l5-3.3-5-3.3z" />
+    </svg>
+  );
+};
+
+const likeIcon = ({ sizex, sizey }) => {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      fill="rgb(255,255,255,0.5)"
+      viewBox="0 0 24 24"
+      width={sizex}
+      height={sizey}
+    >
+      <path d="M14.9 3H6c-.8 0-1.5.5-1.8 1.2l-3 7.3c-.1.2-.2.4-.2.7v2c0 1.1.9 2 2 2h6.3l-1 4.7v.3c0 .4.2.8.4 1.1.6.7 1.5.7 2.1.1l5.5-5.7c.4-.4.6-.9.6-1.4V5c0-1.1-.9-2-2-2zm-.2 12.6l-3.5 3.6c-.2.2-.5 0-.4-.2l1-4.6H4c-.6 0-1-.5-1-1v-1.1l2.7-6.6c.2-.5.6-.7 1-.7H14c.5 0 1 .5 1 1v8.8c-.1.3-.2.6-.3.8zM19 3h4v12h-4V3z"></path>
+    </svg>
+  );
+};
 
 const Icon = ({ name, sizex, sizey = sizex }) => {
   const icons = {
@@ -106,6 +149,9 @@ const Icon = ({ name, sizex, sizey = sizex }) => {
     chromecast: chromecastIcon,
     logo: logo,
     mini: miniLogo,
+    prev: prevIcon,
+    cast: castIcon,
+    like: likeIcon,
   };
 
   const Component = icons[name];

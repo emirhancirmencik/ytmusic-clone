@@ -7,6 +7,7 @@ module.exports = {
       colors: {
         white1: "#fff",
         whitealpha1: "rgb(255,255,255,0.5)",
+        whitealpha2: "rgb(255,255,255,0.3)",
         grey2: `#aaa`,
         grey3: `#909090`,
         grey4: `#717171`,
@@ -44,4 +45,7 @@ module.exports = {
     },
   },
   plugins: [],
+  variants: {
+    width: ["responsive", "group-hover", "focus"],
+  },
 };
