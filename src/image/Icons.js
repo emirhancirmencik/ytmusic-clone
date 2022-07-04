@@ -55,6 +55,7 @@ const logo = ({ sizex, sizey }) => {
       xmlns="http://www.w3.org/2000/svg"
       width={sizex}
       height={sizey}
+      viewBox={`0 0 ${sizex} ${sizey}`}
       fill="none"
     >
       <ellipse cx="12.18" cy="12" rx="12.18" ry="12" fill="red" />

@@ -416,8 +416,6 @@ html, body,  #root {
   height: 100%;
   --tw-bg-opacity: 1;
   background-color: rgb(3 3 3 / var(--tw-bg-opacity));
-  font-size: 1.125rem;
-  line-height: 1.75rem;
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
 }
@@ -572,9 +570,21 @@ html, body,  #root {
   --tw-backdrop-sepia:  ;
 }
 
-.mx-4 {
-  margin-left: 1rem;
-  margin-right: 1rem;
+.mx-5 {
+  margin-left: 1.25rem;
+  margin-right: 1.25rem;
+}
+
+.mt-1 {
+  margin-top: 0.25rem;
+}
+
+.ml-\[2px\] {
+  margin-left: 2px;
+}
+
+.mt-2 {
+  margin-top: 0.5rem;
 }
 
 .ml-2 {
@@ -654,11 +664,6 @@ html, body,  #root {
   padding-right: 1rem;
 }
 
-.px-2 {
-  padding-left: 0.5rem;
-  padding-right: 0.5rem;
-}
-
 .py-0 {
   padding-top: 0px;
   padding-bottom: 0px;
@@ -669,14 +674,25 @@ html, body,  #root {
   padding-bottom: 0.75rem;
 }
 
-.text-xl {
-  font-size: 1.25rem;
-  line-height: 1.75rem;
+.pl-20 {
+  padding-left: 5rem;
+}
+
+.pr-5 {
+  padding-right: 1.25rem;
+}
+
+.text-\[22px\] {
+  font-size: 22px;
 }
 
 .text-sm {
   font-size: 0.875rem;
   line-height: 1.25rem;
+}
+
+.font-\[700\] {
+  font-weight: 700;
 }
 
 .font-bold {

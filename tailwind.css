@@ -7,7 +7,7 @@
 @layer base{
   html,body, #root{
     font-family: 'Roboto', sans-serif;
-    @apply h-full bg-black4 text-white text-lg 
+    @apply h-full bg-black4 text-white
   }
   #root{
     @apply flex flex-col
