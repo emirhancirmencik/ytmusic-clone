@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Search from "./Navbar/Search";
 import logo from "../image/logo.svg";
 import { Icon } from "../image/Icons";
@@ -6,20 +6,31 @@ import CenterContent from "./Navbar/CenterContent";
 import { Link } from "react-router-dom";
 
 function Navbar() {
+  const [scrollPosition, setScrollPosition] = useState(0);
+  const handleScroll = () => {
+    const position = window.pageYOffset;
+    setScrollPosition(position);
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
   return (
-    <nav className="h-16 px-4 flex space-x-4 justify-between items-center	box-border">
+    <nav
+      className={`h-16 px-4 flex  space-x-4 justify-between items-center	box-border fixed w-full bg-black z-10 ${
+        scrollPosition > 0 ? "border-b-[1px] border-b-whitealpha3" : ""
+      }`}
+    >
       <div className="flex items-center">
         <Link to="/">
-          <img
-            src={logo}
-            width={89}
-            height={24}
-            alt="logo"
-            className="mt-1 ml-[2px]"
-          />
+          <img src={logo} alt="logo" className="ml-[2px] w-[80px] h-[24px]" />
         </Link>
       </div>
-      <div className="h-12 pl-20 text-whitealpha1 flex items-center justify-between font-[700] text-[22px]">
+      <div className=" pl-20 text-whitealpha1 flex items-center justify-between font-[700] text-[20px] leading-[1.2]">
         <CenterContent link="/">Home</CenterContent>
         <CenterContent>Explore</CenterContent>
         <CenterContent>Library</CenterContent>

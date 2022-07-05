@@ -142,6 +142,20 @@ const likeIcon = ({ sizex, sizey }) => {
   );
 };
 
+const playIcon = ({ sizex, sizey }) => {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      fill="currentColor"
+      viewBox="0 0 24 24"
+      width={sizex}
+      height={sizey}
+    >
+      <path d="M8 5v14l11-7z"></path>
+    </svg>
+  );
+};
+
 const Icon = ({ name, sizex, sizey = sizex }) => {
   const icons = {
     search: searchIcon,
@@ -152,6 +166,7 @@ const Icon = ({ name, sizex, sizey = sizex }) => {
     prev: prevIcon,
     cast: castIcon,
     like: likeIcon,
+    play: playIcon,
   };
 
   const Component = icons[name];
