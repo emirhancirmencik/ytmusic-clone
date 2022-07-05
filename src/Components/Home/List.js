@@ -21,7 +21,7 @@ function List(props) {
       )}
       <div className="flex justify-between">
         <h1 className="text-white text-[45px] font-bold">{props.header}</h1>
-        <ScrollButtons element={ref} />
+        <ScrollButtons element={ref} offsetNumber={6} elementNumber={18} />
       </div>
       <div
         ref={ref}
@@ -53,10 +53,24 @@ function List(props) {
               <MiniListElement />
               <MiniListElement />
             </div>
+            <div className="flex flex-col w-1/3 flex-shrink-0">
+              <MiniListElement />
+              <MiniListElement />
+              <MiniListElement />
+              <MiniListElement />
+            </div>
+            <div className="flex flex-col w-1/3 flex-shrink-0">
+              <MiniListElement />
+              <MiniListElement />
+              <MiniListElement />
+              <MiniListElement />
+            </div>
           </>
         ) : (
           <>
             <div className="flex flex-shrink-0">
+              <AlbumListElement />
+              <AlbumListElement />
               <AlbumListElement />
               <AlbumListElement />
               <AlbumListElement />

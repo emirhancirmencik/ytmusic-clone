@@ -13,9 +13,10 @@ function Cover() {
         className="w-12 h-12"
       />
 
-      <div className="w-12 h-12 opacity-90 absolute hidden items-center justify-center bg-black group-hover:flex"></div>
-      <div className="text-white absolute w-12 h-12 hidden items-center justify-center group-hover:flex">
-        <Icon name="play" sizex="20px" />
+      <div className="w-12 h-12 bg-opacity-90 absolute hidden items-center justify-center bg-black group-hover:flex">
+        <div className="text-white absolute w-12 h-12 hidden items-center justify-center group-hover:flex">
+          <Icon name="play" sizex="20px" />
+        </div>
       </div>
     </div>
   );
