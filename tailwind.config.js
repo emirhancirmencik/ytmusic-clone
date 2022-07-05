@@ -3,6 +3,12 @@ module.exports = {
   mode: "jit",
   content: ["./public/**/*.html", "./src/**/*.{js,jsx,ts,tsx,vue}"],
   theme: {
+    screens: {
+      tabletmax: { max: "936px" },
+      tabletmin: "937px",
+      smlmax: { max: "616px" },
+      smlmin: "615px",
+    },
     extend: {
       colors: {
         white1: "#fff",

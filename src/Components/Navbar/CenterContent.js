@@ -1,5 +1,6 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
+import { Icon } from "image/Icons";
 
 function CenterContent(props) {
   return (
@@ -8,7 +9,11 @@ function CenterContent(props) {
       className={({ isActive }) => (isActive ? "text-white" : undefined)}
     >
       <div className={`mx-5 cursor-pointer hover:text-white`}>
-        {props.children}
+        <span className="tabletmax:hidden">{props.children}</span>
+
+        <span className="tabletmin:hidden">
+          <Icon sizex="24px" name={`${props.children.toLowerCase()}`} />
+        </span>
       </div>
     </NavLink>
   );

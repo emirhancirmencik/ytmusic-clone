@@ -156,6 +156,50 @@ const playIcon = ({ sizex, sizey }) => {
   );
 };
 
+const homeIcon = ({ sizex, sizey }) => {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      fill="currentColor"
+      viewBox="0 0 24 24"
+      width={sizex}
+      height={sizey}
+    >
+      <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"></path>
+    </svg>
+  );
+};
+
+const exploreIcon = ({ sizex, sizey }) => {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      fill="currentColor"
+      viewBox="0 0 24 24"
+      width={sizex}
+      height={sizey}
+    >
+      <path d="M12 10.9c-.61 0-1.1.49-1.1 1.1s.49 1.1 1.1 1.1c.61 0 1.1-.49 1.1-1.1s-.49-1.1-1.1-1.1zM12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zm2.19 12.19L6 18l3.81-8.19L18 6l-3.81 8.19z"></path>
+      <path d="M0 0h24v24H0z" fill="none"></path>
+    </svg>
+  );
+};
+
+const libraryIcon = ({ sizex, sizey }) => {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      fill="currentColor"
+      viewBox="0 0 24 24"
+      width={sizex}
+      height={sizey}
+    >
+      <path d="M0 0h24v24H0z" fill="none"></path>
+      <path d="M20 2H8c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-2 5h-3v5.5c0 1.38-1.12 2.5-2.5 2.5S10 13.88 10 12.5s1.12-2.5 2.5-2.5c.57 0 1.08.19 1.5.51V5h4v2zM4 6H2v14c0 1.1.9 2 2 2h14v-2H4V6z"></path>
+    </svg>
+  );
+};
+
 const Icon = ({ name, sizex, sizey = sizex }) => {
   const icons = {
     search: searchIcon,
@@ -167,6 +211,9 @@ const Icon = ({ name, sizex, sizey = sizex }) => {
     cast: castIcon,
     like: likeIcon,
     play: playIcon,
+    home: homeIcon,
+    explore: exploreIcon,
+    library: libraryIcon,
   };
 
   const Component = icons[name];

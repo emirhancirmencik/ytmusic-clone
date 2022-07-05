@@ -14,11 +14,12 @@ function ScrollButtons(props) {
   }, []);
 
   function handleScroll(raise) {
-    props.element.current.scrollLeft +=
+    props.element.current.scrollLeft += Math.round(
       raise *
-      ((props.element.current.scrollWidth / props.elementNumber) *
-        props.offsetNumber +
-        28);
+        ((props.element.current.scrollWidth / props.elementNumber) *
+          props.offsetNumber +
+          props.marginValue / 2)
+    );
   }
   return (
     <div className="w-24 flex mt-auto justify-between">

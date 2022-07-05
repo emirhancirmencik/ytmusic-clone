@@ -7,7 +7,7 @@ function Search() {
       <div className="py-3 px-4">
         <Icon sizex="24" sizey="24" name="search" />
       </div>
-      <div className="">Search</div>
+      <div className="tabletmax:hidden">Search</div>
     </div>
   );
 }
