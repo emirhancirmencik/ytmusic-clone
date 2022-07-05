@@ -11,6 +11,7 @@ function Home() {
       />
       <List header="Quick picks" type="Mini" />
       <List header="Quick picks" type="Mini" />
+      <List header="Quick picks" type="Mini" />
     </div>
   );
 }

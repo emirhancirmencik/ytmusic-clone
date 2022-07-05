@@ -4,21 +4,24 @@ import Cover from "./Cover";
 
 function AlbumListElement() {
   return (
-    <div className="group w-full flex flex-col mb-2 mr-7 relative">
+    <div className="group w-full flex flex-col mb-2 ml-7 relative">
       <Cover />
-      <div className="flex ml-3 w-2/3 font-light flex-col text-white group-hover:w-1/3 ">
-        <div>test</div>
-        <div className="inline-flex w-full items-center text-whitealpha1">
-          <Icon name="cast" sizex="20px" />
-          <a href="#/" className="ml-1 hover:underline ">
-            test
-          </a>
-          <div className="ml-1 cursor-default select-none truncate">
+      <div className="flex mt-2 w-full font-light flex-col text-white ">
+        <div className="hover:underline align-left cursor-pointer">
+          {" "}
+          Hip Hop Classics
+        </div>
+        <div className="flex text-whitealpha1">
+          <span>Album</span>
+          <div className="ml-1 cursor-default  select-none truncate">
             {" "}
-            •
-            <span href="#/" className="ml-1 whitespace-nowrap truncate">
+            •{" "}
+            <a
+              href="#/"
+              className=" whitespace-nowrap hover:underline truncate"
+            >
               test test22
-            </span>
+            </a>
           </div>
         </div>
       </div>

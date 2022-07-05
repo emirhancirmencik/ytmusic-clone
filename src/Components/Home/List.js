@@ -2,6 +2,7 @@ import React, { useRef } from "react";
 import { Icon } from "../../image/Icons";
 import AlbumListElement from "./AlbumList/AlbumListElement";
 import MiniListElement from "./MiniList/MiniListElement";
+import ArtistListElement from "./ArtistList/ArtistListElement";
 import ScrollButtons from "./ScrollButtons";
 
 function List(props) {
@@ -21,15 +22,20 @@ function List(props) {
       )}
       <div className="flex justify-between">
         <h1 className="text-white text-[45px] font-bold">{props.header}</h1>
-        <ScrollButtons element={ref} offsetNumber={6} elementNumber={18} />
+        <ScrollButtons
+          element={ref}
+          offsetNumber={type === "Mini" ? 3 : 6}
+          elementNumber={type === "Mini" ? 6 : 18}
+          marginValue={type === "Mini" ? 0 : 14}
+        />
       </div>
       <div
         ref={ref}
-        className="flex w-full overflow-x-hidden scroll-smooth mt-5"
+        className="flex mylist w-full overflow-x-auto scroll-smooth mt-5"
       >
         {type === "Mini" ? (
           <>
-            <div className="flex flex-col w-1/3 flex-shrink-0">
+            <div className="mylist flex flex-col w-1/3 flex-shrink-0">
               <MiniListElement />
               <MiniListElement />
               <MiniListElement />
@@ -68,9 +74,9 @@ function List(props) {
           </>
         ) : (
           <>
-            <div className="flex flex-shrink-0">
+            <div className="flex mylist justify-between flex-shrink-0">
               <AlbumListElement />
-              <AlbumListElement />
+              <ArtistListElement />
               <AlbumListElement />
               <AlbumListElement />
               <AlbumListElement />
