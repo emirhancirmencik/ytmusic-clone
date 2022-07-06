@@ -10,7 +10,7 @@ function List(props) {
   const type = props.type;
 
   return (
-    <div className="w-[1489px] pt-8 mx-auto">
+    <div className="w-[1489px] pt-8 mx-auto z-20">
       {props.strapline && (
         <div
           className={`${

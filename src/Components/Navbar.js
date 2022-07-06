@@ -12,8 +12,10 @@ function Navbar() {
 
   return (
     <nav
-      className={`h-16 px-4 flex space-x-4 justify-between items-center	box-border fixed w-full bg-black z-10 ${
-        scrollPosition > 0 ? "border-b-[1px] border-b-whitealpha3" : ""
+      className={`h-16 px-4 flex space-x-4 justify-between items-center	box-border transition-[background] duration-500 fixed w-full z-30 ${
+        scrollPosition > 0
+          ? "border-b-[1px] border-b-whitealpha3 bg-black"
+          : "bg-transparent "
       }`}
     >
       <div className="flex items-center">

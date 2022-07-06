@@ -10,11 +10,16 @@ module.exports = {
       smlmin: "615px",
     },
     extend: {
+      backgroundImage: {
+        mybg: "url('/src/image/background.jpg')",
+      },
+
       colors: {
         white1: "#fff",
         whitealpha1: "rgb(255,255,255,0.5)",
         whitealpha2: "rgb(255,255,255,0.3)",
-        whitealpha3: "rgb(255,255,255,0.1)",
+        whitealpha3: "rgb(255,255,255,0.12)",
+        blackalpha1: "rgb(0,0,0,0.3)",
         grey2: `#aaa`,
         grey3: `#909090`,
         grey4: `#717171`,
