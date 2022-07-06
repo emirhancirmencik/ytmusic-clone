@@ -10,7 +10,7 @@ function Cover() {
         alt="cover"
         width="100%"
         height="100%"
-        className="w-12 h-12"
+        className="w-12 h-12 object-cover"
       />
 
       <div className="w-12 h-12 bg-opacity-90 absolute hidden items-center justify-center bg-black group-hover:flex">

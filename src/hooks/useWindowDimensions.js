@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useLayoutEffect, useCallback, useState, useEffect } from "react";
 
 function getWindowDimensions() {
   const { innerWidth: width, innerHeight: height } = window;
@@ -25,12 +25,13 @@ export function useWindowDimensions() {
   return windowDimensions;
 }
 
-export function useScroll() {
+export function useScroll(ref) {
   const [scroll, setScroll] = useState(0);
 
   const handleScroll = () => {
-    const position = window.pageYOffset;
-    setScroll(position);
+    const posY = window.pageYOffset;
+    const posX = window.pageXOffset;
+    setScroll({ x: posX, y: posY });
   };
 
   useEffect(() => {
@@ -41,4 +42,64 @@ export function useScroll() {
     };
   }, []);
   return scroll;
+}
+
+export const useRect = (ref) => {
+  const [rect, setRect] = useState(getRect(ref ? ref.current : null));
+
+  const handleResize = useCallback(() => {
+    if (!ref.current) {
+      return;
+    }
+
+    // Update client rect
+    setRect(getRect(ref.current));
+  }, [ref]);
+
+  useLayoutEffect(() => {
+    const element = ref.current;
+    if (!element) {
+      return;
+    }
+
+    handleResize();
+
+    if (typeof ResizeObserver === "function") {
+      let resizeObserver = new ResizeObserver(() => handleResize());
+      resizeObserver.observe(element);
+
+      return () => {
+        if (!resizeObserver) {
+          return;
+        }
+
+        resizeObserver.disconnect();
+        resizeObserver = null;
+      };
+    } else {
+      // Browser support, remove freely
+      window.addEventListener("resize", handleResize);
+
+      return () => {
+        window.removeEventListener("resize", handleResize);
+      };
+    }
+  }, [ref.current]);
+
+  return rect;
+};
+
+function getRect(element) {
+  if (!element) {
+    return {
+      bottom: 0,
+      height: 0,
+      left: 0,
+      right: 0,
+      top: 0,
+      width: 0,
+    };
+  }
+
+  return element.getBoundingClientRect();
 }

@@ -431,11 +431,16 @@ html, body,  #root {
 
 .mylist::-webkit-scrollbar {
   width: 0 !important;
-  overflow:-moz-scrollbars-none;
+  overflow-x:-moz-scrollbars-none;
 }
 
 .mylist:nth-child(1) {
   margin-left: -28px;
+}
+
+.mylist{
+  margin-bottom:-300px;
+  padding-bottom:300px;
 }
 
 *, ::before, ::after {
@@ -619,12 +624,25 @@ html, body,  #root {
   z-index: 30;
 }
 
+.z-50 {
+  z-index: 50;
+}
+
 .z-\[1\] {
   z-index: 1;
 }
 
 .z-20 {
   z-index: 20;
+}
+
+.z-10 {
+  z-index: 10;
+}
+
+.mx-2 {
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
 }
 
 .mx-auto {
@@ -705,6 +723,14 @@ html, body,  #root {
   height: 5rem;
 }
 
+.h-screen {
+  height: 100vh;
+}
+
+.h-auto {
+  height: auto;
+}
+
 .h-16 {
   height: 4rem;
 }
@@ -739,6 +765,14 @@ html, body,  #root {
 
 .w-full {
   width: 100%;
+}
+
+.w-screen {
+  width: 100vw;
+}
+
+.w-60 {
+  width: 15rem;
 }
 
 .w-\[1489px\] {
@@ -834,12 +868,12 @@ html, body,  #root {
   margin-left: calc(1rem * calc(1 - var(--tw-space-x-reverse)));
 }
 
-.overflow-x-auto {
-  overflow-x: auto;
+.overflow-auto {
+  overflow: auto;
 }
 
-.overflow-y-auto {
-  overflow-y: auto;
+.overflow-x-auto {
+  overflow-x: auto;
 }
 
 .scroll-smooth {
@@ -854,6 +888,10 @@ html, body,  #root {
 
 .whitespace-nowrap {
   white-space: nowrap;
+}
+
+.rounded-\[2p\] {
+  border-radius: 2p;
 }
 
 .rounded-sm {
@@ -876,6 +914,10 @@ html, body,  #root {
   border-bottom-width: 1px;
 }
 
+.border-whitealpha1 {
+  border-color: rgb(255,255,255,0.5);
+}
+
 .border-whitealpha2 {
   border-color: rgb(255,255,255,0.3);
 }
@@ -889,6 +931,10 @@ html, body,  #root {
   background-color: rgb(33 33 33 / var(--tw-bg-opacity));
 }
 
+.bg-transparent {
+  background-color: transparent;
+}
+
 .bg-black {
   --tw-bg-opacity: 1;
   background-color: rgb(0 0 0 / var(--tw-bg-opacity));
@@ -897,10 +943,6 @@ html, body,  #root {
 .bg-white {
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
-}
-
-.bg-transparent {
-  background-color: transparent;
 }
 
 .bg-opacity-50 {
@@ -920,7 +962,7 @@ html, body,  #root {
 }
 
 .from-blackalpha1 {
-  --tw-gradient-from: rgb(0,0,0,0.3);
+  --tw-gradient-from: rgb(0,0,0,0.4);
   --tw-gradient-to: rgb(0 0 0 / 0);
   --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
 }
@@ -933,52 +975,12 @@ html, body,  #root {
   background-size: cover;
 }
 
-.bg-top {
-  background-position: top;
-}
-
-.bg-\[center_top_1rem\] {
-  background-position: center top 1rem;
-}
-
-.bg-\[center_bottom_1rem\] {
-  background-position: center bottom 1rem;
-}
-
-.bg-\[center_top_2rem\] {
-  background-position: center top 2rem;
-}
-
-.bg-\[center_top_-2rem\] {
-  background-position: center top -2rem;
-}
-
-.bg-\[center_top_4rem\] {
-  background-position: center top 4rem;
-}
-
-.bg-\[center_top_-4rem\] {
-  background-position: center top -4rem;
-}
-
-.bg-\[center_top_-5rem\] {
-  background-position: center top -5rem;
-}
-
-.bg-\[center_top_-10rem\] {
-  background-position: center top -10rem;
-}
-
-.bg-\[center_top_-8rem\] {
-  background-position: center top -8rem;
-}
-
-.bg-\[center_top_-6rem\] {
-  background-position: center top -6rem;
-}
-
 .bg-\[center_top_-3rem\] {
   background-position: center top -3rem;
+}
+
+.object-cover {
+  object-fit: cover;
 }
 
 .p-2 {
@@ -987,6 +989,11 @@ html, body,  #root {
 
 .p-1 {
   padding: 0.25rem;
+}
+
+.py-4 {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
 }
 
 .px-4 {
@@ -1014,6 +1021,10 @@ html, body,  #root {
 
 .pt-64 {
   padding-top: 16rem;
+}
+
+.pl-3 {
+  padding-left: 0.75rem;
 }
 
 .pt-8 {
@@ -1080,6 +1091,12 @@ html, body,  #root {
   opacity: 0.4;
 }
 
+.transition-\[background\] {
+  transition-property: background;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
 .transition-colors {
   transition-property: color, background-color, border-color, fill, stroke, -webkit-text-decoration-color;
   transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
@@ -1092,30 +1109,6 @@ html, body,  #root {
   transition-property: all;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 150ms;
-}
-
-.transition-\[background\] {
-  transition-property: background;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 150ms;
-}
-
-.transition-shadow {
-  transition-property: box-shadow;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 150ms;
-}
-
-.delay-150 {
-  transition-delay: 150ms;
-}
-
-.delay-100 {
-  transition-delay: 100ms;
-}
-
-.duration-1000 {
-  transition-duration: 1000ms;
 }
 
 .duration-500 {
@@ -1164,6 +1157,10 @@ html, body,  #root {
           transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
+.hover\:bg-whitealpha4:hover {
+  background-color: rgb(255,255,255,0.05);
+}
+
 .hover\:bg-whitealpha2:hover {
   background-color: rgb(255,255,255,0.3);
 }
@@ -1180,13 +1177,6 @@ html, body,  #root {
 .hover\:underline:hover {
   -webkit-text-decoration-line: underline;
           text-decoration-line: underline;
-}
-
-.active\:scale-95:active {
-  --tw-scale-x: .95;
-  --tw-scale-y: .95;
-  -webkit-transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
-          transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
 .active\:scale-90:active {

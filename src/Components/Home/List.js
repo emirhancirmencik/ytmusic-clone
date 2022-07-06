@@ -31,7 +31,7 @@ function List(props) {
       </div>
       <div
         ref={ref}
-        className="flex mylist w-full overflow-x-auto scroll-smooth mt-5"
+        className="flex mylist w-full overflow-x-auto  max-h-30 scroll-smooth mt-5"
       >
         {type === "Mini" ? (
           <>

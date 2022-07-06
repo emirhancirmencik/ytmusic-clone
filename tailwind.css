@@ -17,9 +17,16 @@
   }
   .mylist::-webkit-scrollbar { 
     width: 0 !important;
-    overflow:-moz-scrollbars-none; 
+    overflow-x:-moz-scrollbars-none; 
+    
   }
   .mylist:nth-child(1){
     @apply ml-[-28px]
   }
+  .mylist{
+    margin-bottom:-300px;
+    padding-bottom:300px;
+  } 
+  
+  
 }

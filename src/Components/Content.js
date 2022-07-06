@@ -4,10 +4,12 @@ import { Routes, Route } from "react-router-dom";
 import Home from "../views/Home";
 import Explore from "../views/Explore";
 import Library from "../views/Library";
+import Dropdown from "./Dropdown";
 
 function Content() {
   return (
     <main className="pb-96">
+      <Dropdown />
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />

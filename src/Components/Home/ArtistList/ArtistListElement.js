@@ -10,7 +10,7 @@ function ArtistListElement() {
           alt="cover"
           width="100%"
           height="100%"
-          className={`w-56 h-56 rounded-full`}
+          className={`w-56 h-56 rounded-full object-cover`}
         />
       </div>
       <div className="flex mt-2 w-full font-light flex-col text-white items-center ">

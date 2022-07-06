@@ -5,7 +5,7 @@ import Cover from "./Cover";
 
 function MiniListElement() {
   return (
-    <div className="group w-full flex mb-2 ml-7 relative">
+    <div className="group w-full flex mb-2 ml-7 z-10 relative">
       <Cover />
       <div className="flex ml-3 w-2/3 font-light flex-col text-white group-hover:w-1/3 ">
         <a href="#/" className="hover:underline ">

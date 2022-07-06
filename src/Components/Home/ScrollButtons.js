@@ -23,7 +23,7 @@ function ScrollButtons(props) {
   }
   return (
     <div className="w-24 flex mt-auto justify-between">
-      <btn
+      <button
         className={`border border-whitealpha2 rounded-full w-10 h-10 p-2  cursor-pointer transition-colors ease-in ${
           scrollPosition === 0
             ? "opacity-40 cursor-default"
@@ -32,7 +32,7 @@ function ScrollButtons(props) {
         onClick={() => handleScroll(-1)}
       >
         <Icon name="prev" sizex="22px" />
-      </btn>
+      </button>
       <div
         className={`border rotate-180 border-whitealpha2 rounded-full w-10 h-10 p-2  cursor-pointer transition-colors ease-in ${
           scrollPosition ===
