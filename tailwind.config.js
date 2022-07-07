@@ -13,6 +13,9 @@ module.exports = {
       backgroundImage: {
         mybg: "url('/src/image/background.jpg')",
       },
+      width: {
+        fullnotscroll: "calc(100% - 12px)",
+      },
 
       colors: {
         white1: "#fff",

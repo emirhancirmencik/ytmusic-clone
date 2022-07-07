@@ -1,5 +1,4 @@
 import React, { useRef } from "react";
-import { Icon } from "../../image/Icons";
 import AlbumListElement from "./AlbumList/AlbumListElement";
 import MiniListElement from "./MiniList/MiniListElement";
 import ArtistListElement from "./ArtistList/ArtistListElement";

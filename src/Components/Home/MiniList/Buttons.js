@@ -16,6 +16,7 @@ function Buttons() {
       setButtonPosition({
         x: pos.x + 138,
         y: pos.y + 42,
+        scroll: pos.y,
       })
     );
 

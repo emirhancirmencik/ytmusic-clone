@@ -20,6 +20,7 @@ function Cover() {
           myref.current.parentElement.parentElement.parentElement.scrollLeft +
           210,
         y: pos.y - (isNaN(scroll.y) ? 0 : scroll.y) + 42,
+        scroll: pos.y,
       })
     );
 

@@ -427,6 +427,7 @@ html, body,  #root {
 
 .content{
   height: calc(100% - 5rem)
+    @apply w-fullnotscroll
 }
 
 .mylist::-webkit-scrollbar {
@@ -441,6 +442,29 @@ html, body,  #root {
 .mylist{
   margin-bottom:-300px;
   padding-bottom:300px;
+}
+
+html::-webkit-scrollbar,.overflow-y-scroll::-webkit-scrollbar {
+  width: 12px;
+}
+
+html::-webkit-scrollbar-track, .overflow-y-scroll::-webkit-scrollbar-track {
+  border-left: 1px solid rgba(255,255,255,0.1)!important;
+  background-color: #181818;
+}
+
+html::-webkit-scrollbar-thumb, .overflow-y-scroll::-webkit-scrollbar-thumb {
+  --tw-bg-opacity: 1;
+  background-color: rgb(96 96 96 / var(--tw-bg-opacity));
+}
+
+html::-webkit-scrollbar-thumb:hover,  .overflow-y-scroll::-webkit-scrollbar-thumb:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(113 113 113 / var(--tw-bg-opacity));
+}
+
+.fixed{
+  margin-right:12px;
 }
 
 *, ::before, ::after {
@@ -703,6 +727,18 @@ html, body,  #root {
   margin-left: 0.75rem;
 }
 
+.ml-8 {
+  margin-left: 2rem;
+}
+
+.ml-\[-1\] {
+  margin-left: -1;
+}
+
+.ml-\[-1px\] {
+  margin-left: -1px;
+}
+
 .box-border {
   box-sizing: border-box;
 }
@@ -767,12 +803,12 @@ html, body,  #root {
   width: 100%;
 }
 
-.w-screen {
-  width: 100vw;
-}
-
 .w-60 {
   width: 15rem;
+}
+
+.w-fullnotscroll {
+  width: calc(100% - 12px);
 }
 
 .w-\[1489px\] {
@@ -797,6 +833,10 @@ html, body,  #root {
 
 .w-12 {
   width: 3rem;
+}
+
+.w-\[497px\] {
+  width: 497px;
 }
 
 .w-2\/3 {
@@ -868,12 +908,12 @@ html, body,  #root {
   margin-left: calc(1rem * calc(1 - var(--tw-space-x-reverse)));
 }
 
-.overflow-auto {
-  overflow: auto;
-}
-
 .overflow-x-auto {
   overflow-x: auto;
+}
+
+.overflow-y-scroll {
+  overflow-y: scroll;
 }
 
 .scroll-smooth {
@@ -1033,6 +1073,22 @@ html, body,  #root {
 
 .pr-5 {
   padding-right: 1.25rem;
+}
+
+.pl-1 {
+  padding-left: 0.25rem;
+}
+
+.pl-\[-1\] {
+  padding-left: -1;
+}
+
+.pl-\[-1px\] {
+  padding-left: -1px;
+}
+
+.pl-\[1px\] {
+  padding-left: 1px;
 }
 
 .text-\[20px\] {

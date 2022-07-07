@@ -14,6 +14,7 @@
   }
   .content{
     height: calc(100% - theme('spacing.20'))
+    @apply w-fullnotscroll
   }
   .mylist::-webkit-scrollbar { 
     width: 0 !important;
@@ -26,7 +27,30 @@
   .mylist{
     margin-bottom:-300px;
     padding-bottom:300px;
-  } 
+  }
+  
+html::-webkit-scrollbar,.overflow-y-scroll::-webkit-scrollbar {
+  width: 12px;
+}
+
+html::-webkit-scrollbar-track, .overflow-y-scroll::-webkit-scrollbar-track {
+  border-left: 1px solid rgba(255,255,255,0.1)!important;
+  background-color: #181818;
+}
+
+html::-webkit-scrollbar-thumb,.overflow-y-scroll::-webkit-scrollbar-thumb {
+  @apply bg-grey5
+}
+
+html::-webkit-scrollbar-thumb:hover, .overflow-y-scroll::-webkit-scrollbar-thumb:hover {
+  @apply bg-grey4
+}
+.hidescroll::-webkit-scrollbar{
+  width: 0 !important;
+}
+.fixed{
+  margin-right:12px;
+}
   
   
 }

@@ -6,9 +6,11 @@ import { Icon } from "../image/Icons";
 import CenterContent from "./Navbar/CenterContent";
 import { Link } from "react-router-dom";
 import { useScroll } from "hooks/useWindowDimensions";
+import { useSelector } from "react-redux";
 
 function Navbar() {
   const scrollPosition = useScroll();
+  const isDropdownActive = useSelector((state) => state.dom.isDropdownActive);
 
   return (
     <nav
@@ -16,7 +18,7 @@ function Navbar() {
         scrollPosition.y > 0
           ? "border-b-[1px] border-b-whitealpha3 bg-black"
           : "bg-transparent "
-      }`}
+      } ${isDropdownActive && "w-fullnotscroll"}`}
     >
       <div className="flex items-center">
         <Link to="/">

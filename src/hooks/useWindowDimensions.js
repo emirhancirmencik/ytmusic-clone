@@ -25,7 +25,7 @@ export function useWindowDimensions() {
   return windowDimensions;
 }
 
-export function useScroll(ref) {
+export function useScroll() {
   const [scroll, setScroll] = useState(0);
 
   const handleScroll = () => {

@@ -1,5 +1,4 @@
 import React, { useEffect } from "react";
-import { Icon } from "../image/Icons";
 import DropdownElement from "./Dropdown/DropdownElement";
 import { useSelector } from "react-redux/es/exports";
 import { useDispatch } from "react-redux/es/exports";
@@ -16,14 +15,16 @@ function Dropdown() {
 
   useEffect(() => {
     if (isDropdownActive) {
-      document.body.style.overflow = "hidden";
+      document.body.style.overflowY = "hidden";
+      document.body.style.paddingRight = "12px";
     } else {
       document.body.style.overflow = "auto";
+      document.body.style.paddingRight = "";
     }
   }, [isDropdownActive]);
   return (
     <div
-      className={`w-screen bg-transparent h-screen left-0 top-0 z-50 ${
+      className={`w-full bg-transparent overflow-y-scroll h-screen left-0 top-0 z-50 ${
         isDropdownActive ? "fixed" : "hidden"
       } `}
       onClick={handleClick}
