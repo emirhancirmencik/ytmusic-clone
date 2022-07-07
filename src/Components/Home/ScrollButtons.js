@@ -7,6 +7,11 @@ function ScrollButtons(props) {
   const slideScroll = () => {
     const position = props.element.current.scrollLeft;
     setScrollPosition(position);
+    console.log(
+      position,
+
+      props.element.current.scrollWidth - props.element.current.offsetWidth
+    );
   };
 
   useEffect(() => {
@@ -35,12 +40,8 @@ function ScrollButtons(props) {
       </button>
       <div
         className={`border rotate-180 border-whitealpha2 rounded-full w-10 h-10 p-2  cursor-pointer transition-colors ease-in ${
-          scrollPosition ===
-          Math.floor(
-            (props.elementNumber - props.offsetNumber) *
-              (props.element.current.scrollWidth / props.elementNumber)
-          ) +
-            props.marginValue
+          props.element.current.offsetWidth + scrollPosition >=
+          props.element.current.scrollWidth
             ? "opacity-40 cursor-default"
             : "hover:bg-whitealpha2 active:scale-90"
         }`}

@@ -1,10 +1,9 @@
 import React from "react";
-import { Icon } from "../../../image/Icons";
 import Cover from "./Cover";
 
 function AlbumListElement() {
   return (
-    <div className="group w-full flex flex-col mb-2 ml-7">
+    <div className="group w-full flex mylistelement flex-col ytmedmax:pl-1 mb-2 ml-7">
       <Cover />
       <div className="flex mt-2 w-full font-light flex-col text-white ">
         <div className="hover:underline align-left cursor-pointer">

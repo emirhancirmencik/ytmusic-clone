@@ -6,8 +6,10 @@ module.exports = {
     screens: {
       tabletmax: { max: "936px" },
       tabletmin: "937px",
-      smlmax: { max: "616px" },
-      smlmin: "615px",
+      smlmax: { max: "615px" },
+      smlmin: "616px",
+      ytmedmax: { max: "1577px" },
+      ytmedmin: "1578px",
     },
     extend: {
       backgroundImage: {
