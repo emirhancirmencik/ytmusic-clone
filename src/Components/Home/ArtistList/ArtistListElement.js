@@ -4,13 +4,11 @@ import cover from "../../../image/cover.jpg";
 function ArtistListElement() {
   return (
     <div className="group w-full flex flex-col mb-2 ml-7 ytmedmax:pl-1 relative text-[17px]">
-      <div className="flex cursor-pointer relative">
+      <div className="ytmedmax:w-[182px] ytmedmax:h-[182px] ytmedmin:w-56 ytmedmin:h-56 pt-[100%] relative flex cursor-pointer ">
         <img
           src={cover}
           alt="cover"
-          width="100%"
-          height="100%"
-          className={`ytmedmax:w-[182px] ytmedmax:h-[182px] ytmedmin:w-56 ytmedmin:h-56 rounded-full object-cover`}
+          className={`absolute inset-0 rounded-full w-full h-full object-cover`}
         />
       </div>
       <div className="flex mt-2 w-full font-light flex-col text-white items-center ">
