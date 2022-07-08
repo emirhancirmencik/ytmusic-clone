@@ -392,7 +392,7 @@ const goToAlbumIcon = ({ sizex, sizey }) => {
   );
 };
 
-const repeatIcon = ({ sizex, sizey }) => {
+const repeatOneIcon = ({ sizex, sizey }) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -477,6 +477,20 @@ const prevSongIcon = ({ sizex, sizey }) => {
   );
 };
 
+const repeatIcon = ({ sizex, sizey }) => {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      fill="currentColor"
+      viewBox="0 0 24 24"
+      width={sizex}
+      height={sizey}
+    >
+      <path d="M3 6.929c0-.75.643-1.393 1.393-1.393h14.286L16.32 3.179 17.5 2l4.393 4.393-4.393 4.393-1.179-1.179L18.68 7.25H4.714V11H3V6.929zM2.107 17.607L6.5 13.214l1.179 1.179L5.32 16.75l13.965-.071v-3.965H21V17c0 .75-.643 1.393-1.393 1.393l-14.286.071 2.358 2.357L6.5 22l-4.393-4.393z" />
+    </svg>
+  );
+};
+
 const Icon = ({ name, sizex, sizey = sizex }) => {
   if (sizex !== sizey) console.log(sizex, sizey);
   const icons = {
@@ -505,12 +519,13 @@ const Icon = ({ name, sizex, sizey = sizex }) => {
     help: helpIcon,
     feedBack: feedBackIcon,
     goToAlbum: goToAlbumIcon,
-    repeat: repeatIcon,
+    repeatOne: repeatOneIcon,
     volume: volumeIcon,
     muted: mutedIcon,
     fullscreen: fullscreenIcon,
     pause: pauseIcon,
     prevSong: prevSongIcon,
+    repeat:repeatIcon
   };
 
   const Component = icons[name];

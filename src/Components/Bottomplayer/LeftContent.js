@@ -3,7 +3,7 @@ import React from "react";
 
 function LeftContent() {
   return (
-    <div className="flex items-center">
+    <div className="flex items-center w-[292px]">
       <div className="flex text-white items-center">
         <div className="ml-2 p-2 items-center w-10 h-10 ">
           <Icon sizex="24" name="prevSong" />
