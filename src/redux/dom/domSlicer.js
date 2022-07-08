@@ -5,17 +5,17 @@ export const domSlicer = createSlice({
   initialState: {
     settingButton: { offsetX: 0, offsetY: 0 },
     isDropdownActive: false,
-    scroll: 0,
+    dropDownElement: "mini",
   },
   reducers: {
     setButtonPosition: (state, action) => {
       const coordinates = action.payload;
       state.settingButton.offsetX = coordinates.x;
       state.settingButton.offsetY = coordinates.y;
-      state.scroll = coordinates.scroll;
     },
-    setDropdownActive: (state) => {
+    setDropdownActive: (state, action) => {
       state.isDropdownActive = !state.isDropdownActive;
+      state.dropDownElement = action.payload;
     },
   },
 });

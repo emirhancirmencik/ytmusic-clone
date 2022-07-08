@@ -7,11 +7,6 @@ function ScrollButtons(props) {
   const slideScroll = () => {
     const position = props.element.current.scrollLeft;
     setScrollPosition(position);
-    console.log(
-      position,
-
-      props.element.current.scrollWidth - props.element.current.offsetWidth
-    );
   };
 
   useEffect(() => {

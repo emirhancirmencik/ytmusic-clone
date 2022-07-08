@@ -21,6 +21,12 @@ function Home() {
       <List header="Quick picks" type="Mini" />
       <List header="Quick picks" type="Mini" />
       <List header="Quick picks" type="Mini" />
+
+      <List
+        strapline="START RADIO FROM A SONG"
+        header="Quick picks"
+        type="Album"
+      />
     </div>
   );
 }

@@ -6,29 +6,38 @@ import {
   setButtonPosition,
   setDropdownActive,
 } from "../../../redux/dom/domSlicer";
-import { useRect, useScroll } from "../../../hooks/useWindowDimensions";
+import {
+  useRect,
+  useWindowDimensions,
+} from "../../../hooks/useWindowDimensions";
 function Cover() {
   const myref = useRef(0);
   const dispatch = useDispatch();
   const pos = useRect(myref);
-  const scroll = useScroll();
+  const windowDimension = useWindowDimensions();
   function handleClick() {
+    let x = pos.x + 30;
+    let y = pos.y + 24;
+
+    if (y + 370 >= windowDimension.height) {
+      y += -370;
+    }
+
+    if (x + 250 >= windowDimension.width) {
+      x += -250;
+    }
     dispatch(
       setButtonPosition({
-        x:
-          pos.x -
-          myref.current.parentElement.parentElement.parentElement.scrollLeft +
-          210,
-        y: pos.y - (isNaN(scroll.y) ? 0 : scroll.y) + 42,
-        scroll: pos.y,
+        x: x,
+        y: y,
       })
     );
 
-    dispatch(setDropdownActive());
+    dispatch(setDropdownActive("album"));
   }
 
   return (
-    <div ref={myref} className="flex w-full cursor-pointer relative">
+    <div className="flex w-full cursor-pointer relative">
       <img
         src={cover}
         alt="cover"
@@ -48,6 +57,7 @@ function Cover() {
 
         <div
           onClick={handleClick}
+          ref={myref}
           className="text-white overflow absolute hidden w-12 h-12 items-center right-0 top-0 justify-center group-hover:flex before:contents-[''] before:w-0 before:h-0 active:before:w-10 active:before:h-10 before:absolute before:bg-black before:opacity-0 before:rounded-full active:before:opacity-20 active:before:transition-all"
         >
           <Icon name="settings" sizex="25px" />
