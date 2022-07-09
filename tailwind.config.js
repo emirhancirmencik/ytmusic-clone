@@ -59,10 +59,11 @@ module.exports = {
         darkthemesecondary: "#bcbcbc",
         darkthemedisabled: "#646464",
         darkthemedivider: "#3c3c3c",
+        barred: "#3367d6",
       },
     },
   },
-  plugins: [],
+  plugins: [require("tailwindcss-labeled-groups")(["volume", "1"])],
   variants: {
     width: ["responsive", "group-hover", "focus"],
   },
