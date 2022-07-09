@@ -1,8 +1,9 @@
 import React, { useRef } from "react";
-import AlbumListElement from "./AlbumList/AlbumListElement";
+import SongListElement from "./SongList/SongListElement";
 import MiniListElement from "./MiniList/MiniListElement";
 import ArtistListElement from "./ArtistList/ArtistListElement";
 import ScrollButtons from "./ScrollButtons";
+import musicList from "static/music";
 
 function List(props) {
   const ref = useRef(0);
@@ -35,105 +36,173 @@ function List(props) {
         {type === "Mini" ? (
           <>
             <div className="mylist flex flex-col w-1/3 flex-shrink-0">
-              <MiniListElement />
-              <MiniListElement />
-              <MiniListElement />
-              <MiniListElement />
+              <MiniListElement controls={props.controls} state={props.state} />
+              <MiniListElement controls={props.controls} state={props.state} />
+              <MiniListElement controls={props.controls} state={props.state} />
+              <MiniListElement controls={props.controls} state={props.state} />
             </div>
             <div className="flex flex-col w-1/3 flex-shrink-0">
-              <MiniListElement />
-              <MiniListElement />
-              <MiniListElement />
-              <MiniListElement />
+              <MiniListElement controls={props.controls} state={props.state} />
+              <MiniListElement controls={props.controls} state={props.state} />
+              <MiniListElement controls={props.controls} state={props.state} />
+              <MiniListElement controls={props.controls} state={props.state} />
             </div>
             <div className="flex flex-col w-1/3 flex-shrink-0">
-              <MiniListElement />
-              <MiniListElement />
-              <MiniListElement />
-              <MiniListElement />
+              <MiniListElement controls={props.controls} state={props.state} />
+              <MiniListElement controls={props.controls} state={props.state} />
+              <MiniListElement controls={props.controls} state={props.state} />
+              <MiniListElement controls={props.controls} state={props.state} />
             </div>
             <div className="flex flex-col w-1/3 flex-shrink-0">
-              <MiniListElement />
-              <MiniListElement />
-              <MiniListElement />
-              <MiniListElement />
+              <MiniListElement controls={props.controls} state={props.state} />
+              <MiniListElement controls={props.controls} state={props.state} />
+              <MiniListElement controls={props.controls} state={props.state} />
+              <MiniListElement controls={props.controls} state={props.state} />
             </div>
             <div className="flex flex-col w-1/3 flex-shrink-0">
-              <MiniListElement />
-              <MiniListElement />
-              <MiniListElement />
-              <MiniListElement />
+              <MiniListElement controls={props.controls} state={props.state} />
+              <MiniListElement controls={props.controls} state={props.state} />
+              <MiniListElement controls={props.controls} state={props.state} />
+              <MiniListElement controls={props.controls} state={props.state} />
             </div>
             <div className="flex flex-col w-1/3 flex-shrink-0">
-              <MiniListElement />
-              <MiniListElement />
-              <MiniListElement />
-              <MiniListElement />
+              <MiniListElement controls={props.controls} state={props.state} />
+              <MiniListElement controls={props.controls} state={props.state} />
+              <MiniListElement controls={props.controls} state={props.state} />
+              <MiniListElement controls={props.controls} state={props.state} />
             </div>
             <div className="mylist flex flex-col w-1/3 flex-shrink-0">
-              <MiniListElement />
-              <MiniListElement />
-              <MiniListElement />
-              <MiniListElement />
+              <MiniListElement controls={props.controls} state={props.state} />
+              <MiniListElement controls={props.controls} state={props.state} />
+              <MiniListElement controls={props.controls} state={props.state} />
+              <MiniListElement controls={props.controls} state={props.state} />
             </div>
             <div className="flex flex-col w-1/3 flex-shrink-0">
-              <MiniListElement />
-              <MiniListElement />
-              <MiniListElement />
-              <MiniListElement />
+              <MiniListElement controls={props.controls} state={props.state} />
+              <MiniListElement controls={props.controls} state={props.state} />
+              <MiniListElement controls={props.controls} state={props.state} />
+              <MiniListElement controls={props.controls} state={props.state} />
             </div>
             <div className="flex flex-col w-1/3 flex-shrink-0">
-              <MiniListElement />
-              <MiniListElement />
-              <MiniListElement />
-              <MiniListElement />
+              <MiniListElement controls={props.controls} state={props.state} />
+              <MiniListElement controls={props.controls} state={props.state} />
+              <MiniListElement controls={props.controls} state={props.state} />
+              <MiniListElement controls={props.controls} state={props.state} />
             </div>
             <div className="flex flex-col w-1/3 flex-shrink-0">
-              <MiniListElement />
-              <MiniListElement />
-              <MiniListElement />
-              <MiniListElement />
+              <MiniListElement controls={props.controls} state={props.state} />
+              <MiniListElement controls={props.controls} state={props.state} />
+              <MiniListElement controls={props.controls} state={props.state} />
+              <MiniListElement controls={props.controls} state={props.state} />
             </div>
             <div className="flex flex-col w-1/3 flex-shrink-0">
-              <MiniListElement />
-              <MiniListElement />
-              <MiniListElement />
-              <MiniListElement />
+              <MiniListElement controls={props.controls} state={props.state} />
+              <MiniListElement controls={props.controls} state={props.state} />
+              <MiniListElement controls={props.controls} state={props.state} />
+              <MiniListElement controls={props.controls} state={props.state} />
             </div>
             <div className="flex flex-col w-1/3 flex-shrink-0">
-              <MiniListElement />
-              <MiniListElement />
-              <MiniListElement />
-              <MiniListElement />
+              <MiniListElement controls={props.controls} state={props.state} />
+              <MiniListElement controls={props.controls} state={props.state} />
+              <MiniListElement controls={props.controls} state={props.state} />
+              <MiniListElement controls={props.controls} state={props.state} />
             </div>
             <div className="flex flex-col w-1/3 flex-shrink-0">
-              <MiniListElement />
-              <MiniListElement />
-              <MiniListElement />
-              <MiniListElement />
+              <MiniListElement controls={props.controls} state={props.state} />
+              <MiniListElement controls={props.controls} state={props.state} />
+              <MiniListElement controls={props.controls} state={props.state} />
+              <MiniListElement controls={props.controls} state={props.state} />
             </div>
           </>
         ) : (
           <>
             <div className="flex mylist justify-between flex-shrink-0">
-              <AlbumListElement />
+              <SongListElement
+                controls={props.controls}
+                state={props.state}
+                song={musicList[0]}
+              />
               <ArtistListElement />
-              <AlbumListElement />
-              <AlbumListElement />
-              <AlbumListElement />
-              <AlbumListElement />
-              <AlbumListElement />
-              <AlbumListElement />
-              <AlbumListElement />
-              <AlbumListElement />
-              <AlbumListElement />
-              <AlbumListElement />
-              <AlbumListElement />
-              <AlbumListElement />
-              <AlbumListElement />
-              <AlbumListElement />
-              <AlbumListElement />
-              <AlbumListElement />
+              <SongListElement
+                controls={props.controls}
+                state={props.state}
+                song={musicList[1]}
+              />
+              <SongListElement
+                controls={props.controls}
+                state={props.state}
+                song={musicList[2]}
+              />
+              <SongListElement
+                controls={props.controls}
+                state={props.state}
+                song={musicList[3]}
+              />
+              <SongListElement
+                controls={props.controls}
+                state={props.state}
+                song={musicList[4]}
+              />
+              <SongListElement
+                controls={props.controls}
+                state={props.state}
+                song={musicList[5]}
+              />
+              <SongListElement
+                controls={props.controls}
+                state={props.state}
+                song={musicList[6]}
+              />
+              <SongListElement
+                controls={props.controls}
+                state={props.state}
+                song={musicList[7]}
+              />
+              <SongListElement
+                controls={props.controls}
+                state={props.state}
+                song={musicList[8]}
+              />
+              <SongListElement
+                controls={props.controls}
+                state={props.state}
+                song={musicList[9]}
+              />
+              <SongListElement
+                controls={props.controls}
+                state={props.state}
+                song={musicList[10]}
+              />
+              <SongListElement
+                controls={props.controls}
+                state={props.state}
+                song={musicList[11]}
+              />
+              <SongListElement
+                controls={props.controls}
+                state={props.state}
+                song={musicList[12]}
+              />
+              <SongListElement
+                controls={props.controls}
+                state={props.state}
+                song={musicList[13]}
+              />
+              <SongListElement
+                controls={props.controls}
+                state={props.state}
+                song={musicList[14]}
+              />
+              <SongListElement
+                controls={props.controls}
+                state={props.state}
+                song={musicList[15]}
+              />
+              <SongListElement
+                controls={props.controls}
+                state={props.state}
+                song={musicList[16]}
+              />
             </div>
           </>
         )}

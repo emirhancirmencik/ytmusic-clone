@@ -48,9 +48,7 @@ function MyRange({ value, step, min, max, onChange, colors, styles }) {
                 ...props.style,
                 cursor: "pointer",
               }}
-            >
-              {console.log(props)}
-            </div>
+            />
           )
         }
       />

@@ -1,13 +1,15 @@
 import { Icon } from "image/Icons";
 import React from "react";
+import { useSelector } from "react-redux";
 import cover from "../../image/cover.jpg";
 
 function CenterContent() {
+  const currentSong = useSelector((state) => state.music.currentSong);
   return (
     <div className="flex items-center">
       <div className="w-10 h-10 relative">
         <img
-          src={cover}
+          src={currentSong.cover}
           alt="cover"
           width="40px"
           height="40px"
@@ -16,14 +18,14 @@ function CenterContent() {
       </div>
       <div className="flex flex-col ml-4 mr-2">
         <div className="text-white whitespace-nowrap text-ellipsis flex  align-center">
-          Song Name
+          {currentSong.name}
         </div>
         <div className="flex text-whitealpha1  text-ellipsis whitespace-pre">
-          <span className="hover:underline cursor-pointer">Artist Name</span>
+          <span className="hover:underline cursor-pointer">
+            {currentSong.artist}
+          </span>
           <span> • </span>
-          <span className="hover:underline cursor-pointer">Album Name</span>
-          <span> • </span>
-          <span>2000</span>
+          <span>99999 Likes</span>
         </div>
       </div>
       <div className="flex items-center">

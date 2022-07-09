@@ -5,12 +5,12 @@ import Home from "../views/Home";
 import Explore from "../views/Explore";
 import Library from "../views/Library";
 
-function Content() {
+function Content({ controls, state }) {
   return (
     <main className="pb-96 w-full">
       <Navbar />
       <Routes>
-        <Route path="/" element={<Home />} />
+        <Route path="/" element={<Home controls={controls} state={state} />} />
         <Route path="/explore" element={<Explore />} />
         <Route path="/library" element={<Library />} />
       </Routes>

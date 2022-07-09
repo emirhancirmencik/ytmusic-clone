@@ -1,9 +1,6 @@
-import React, { useState } from "react";
-import { Range, getTrackBackground } from "react-range";
+import React from "react";
 import MyRange from "./MyRange";
 function ProgressBar({ audio, controls }) {
-  const STEP = 0.1;
-  const MIN = 0;
   return (
     <div className="absolute w-full top-[-17px] group">
       <MyRange

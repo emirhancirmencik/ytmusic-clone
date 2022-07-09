@@ -1,16 +1,18 @@
 import React, { useRef } from "react";
-import cover from "../../../image/cover.jpg";
 import { Icon } from "../../../image/Icons";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import {
   setButtonPosition,
   setDropdownActive,
 } from "../../../redux/dom/domSlicer";
+import { setCurrentSong } from "../../../redux/music/musicSlicer";
 import {
   useRect,
   useWindowDimensions,
 } from "../../../hooks/useWindowDimensions";
-function Cover() {
+function Cover({ song, controls, state }) {
+  const currentSong = useSelector((state) => state.music.currentSong);
+
   const myref = useRef(0);
   const dispatch = useDispatch();
   const pos = useRect(myref);
@@ -36,11 +38,23 @@ function Cover() {
     dispatch(setDropdownActive("album"));
   }
 
+  function handlePlayButton() {
+    if (currentSong?.src !== song?.src) {
+      dispatch(setCurrentSong(song));
+    } else {
+      if (state.paused) {
+        controls.play();
+      } else {
+        controls.pause();
+      }
+    }
+  }
+
   return (
     <div className="flex w-full cursor-pointer relative">
       <div className="ytmedmax:w-[182px] ytmedmax:h-[182px] ytmedmin:w-56 ytmedmin:h-56 pt-[100%] relative">
         <img
-          src={cover}
+          src={song.cover}
           alt="cover"
           className={`absolute inset-0 rounded w-full h-full object-cover`}
         />
@@ -62,9 +76,21 @@ function Cover() {
         <Icon name="settings" sizex="25px" />
       </div>
 
-      <div className="w-12 h-12 bg-opacity-50 bottom-4 rounded-full right-4 absolute hidden items-center justify-center hover:scale-110 transition-all hover:bg-opacity-80  bg-black group-hover:flex">
+      <div
+        className="w-12 h-12 bg-opacity-50 bottom-4 rounded-full right-4 absolute hidden items-center justify-center hover:scale-110 transition-all hover:bg-opacity-80  bg-black group-hover:flex"
+        onClick={handlePlayButton}
+      >
         <div className="text-white absolute hidden items-center justify-center group-hover:flex">
-          <Icon name="play" sizex="20px" />
+          <Icon
+            name={
+              currentSong.src !== song.src
+                ? "play"
+                : state.paused
+                ? "play"
+                : "pause"
+            }
+            sizex="20px"
+          />
         </div>
       </div>
     </div>
