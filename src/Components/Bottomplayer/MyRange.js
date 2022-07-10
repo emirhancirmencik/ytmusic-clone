@@ -29,7 +29,7 @@ function MyRange({ value, step, min, max, onChange, colors, styles }) {
                   values: [value],
                   colors,
                   min,
-                  max,
+                  max: max || 1,
                 }),
               }}
             >

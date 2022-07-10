@@ -1,6 +1,6 @@
-import mozart from "../image/covers/cover18.jpg";
-import freesound from "../image/covers/cover0.jpg";
-import schubert from "../image/covers/cover17.jpg";
+import mozart from "../image/covers182/cover18.jpg";
+import freesound from "../image/covers182/cover0.jpg";
+import schubert from "../image/covers182/cover17.jpg";
 
 const artistList = [
   {
@@ -17,4 +17,4 @@ const artistList = [
   },
 ];
 
-export default artistList;
+export default artistList.sort(() => Math.random() - 0.5);

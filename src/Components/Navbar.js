@@ -11,11 +11,12 @@ import { useSelector } from "react-redux";
 function Navbar() {
   const scrollPosition = useScroll();
   const isDropdownActive = useSelector((state) => state.dom.isDropdownActive);
+  const fullScreen = useSelector((state) => state.dom.fullScreen);
 
   return (
     <nav
       className={`h-16 px-4 flex justify-between items-center	box-border transition-[background] duration-500 fixed w-full z-30 ${
-        scrollPosition.y > 0
+        scrollPosition.y > 0 || fullScreen
           ? "border-b-[1px] border-b-whitealpha3 bg-black"
           : "bg-transparent "
       } ${isDropdownActive && "w-fullnotscroll"}`}

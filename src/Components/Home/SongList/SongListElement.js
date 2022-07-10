@@ -1,10 +1,10 @@
 import React from "react";
 import Cover from "./Cover";
 
-function SongElement({ song, controls, state }) {
+function SongElement({ song }) {
   return (
     <div className="group w-full flex mylistelement flex-col ytmedmax:pl-1 mb-2 ml-7">
-      <Cover song={song} controls={controls} state={state} />
+      <Cover song={song} />
       <div className="flex mt-2 ytmedmax:w-[182px] ytmedmin:w-56  font-light flex-col text-white ">
         <div className="hover:underline align-left cursor-pointer whitespace-nowrap text-ellipsis overflow-hidden">
           {song.name}

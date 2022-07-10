@@ -1,8 +1,14 @@
 import React from "react";
+import { useDispatch } from "react-redux";
+import { setFullScreen } from "redux/dom/domSlicer";
 import MyRange from "./MyRange";
 function ProgressBar({ audio, controls }) {
+  const dispatch = useDispatch();
   return (
-    <div className="absolute w-full top-[-17px] group">
+    <div
+      className="absolute w-full top-[-17px] group"
+      onClick={() => dispatch(setFullScreen())}
+    >
       <MyRange
         step={0.1}
         min={0}

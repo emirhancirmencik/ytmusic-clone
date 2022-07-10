@@ -4,21 +4,19 @@ export const musicSlicer = createSlice({
   name: "music",
   initialState: {
     currentSong: "",
-    controls: "",
+    isPaused: false,
   },
   reducers: {
     setCurrentSong: (state, action) => {
       state.currentSong = action.payload;
     },
-
-    setControls: (state, action) => {
-      state.controls = action.payload;
-      console.log(state.controls);
+    setIsPaused: (state, action) => {
+      state.isPaused = action.payload;
     },
   },
 });
 
 // Action creators are generated for each case reducer function
-export const { setCurrentSong, setIsPaused, setControls } = musicSlicer.actions;
+export const { setCurrentSong, setIsPaused } = musicSlicer.actions;
 
 export default musicSlicer.reducer;

@@ -1,12 +1,13 @@
 import { Icon } from "image/Icons";
 import React from "react";
-import { useSelector } from "react-redux";
-import cover from "../../image/cover.jpg";
+import { useDispatch, useSelector } from "react-redux";
+import { setFullScreen } from "redux/dom/domSlicer";
 
 function CenterContent() {
+  const dispatch = useDispatch();
   const currentSong = useSelector((state) => state.music.currentSong);
   return (
-    <div className="flex items-center">
+    <div className="flex items-center font-bold leading-[18px]">
       <div className="w-10 h-10 relative">
         <img
           src={currentSong.cover}
@@ -25,17 +26,27 @@ function CenterContent() {
             {currentSong.artist}
           </span>
           <span> • </span>
+          <span>Album • </span>
           <span>99999 Likes</span>
         </div>
       </div>
       <div className="flex items-center">
-        <span className="cursor-pointer w-10 h-10 p-2 mr-2">
+        <span
+          className="cursor-pointer w-10 h-10 p-2 mr-2"
+          onClick={() => dispatch(setFullScreen())}
+        >
           <Icon name="like" sizex="24px" className="" />
         </span>
-        <span className="cursor-pointer w-10 h-10 rotate-180 p-2 mr-2">
+        <span
+          className="cursor-pointer w-10 h-10 rotate-180 p-2 mr-2"
+          onClick={() => dispatch(setFullScreen())}
+        >
           <Icon name="like" sizex="24px" className="" />
         </span>
-        <span className="cursor-pointer w-10 h-10 p-2 text-whitealpha1">
+        <span
+          className="cursor-pointer w-10 h-10 p-2 text-whitealpha1"
+          onClick={() => dispatch(setFullScreen())}
+        >
           <Icon name="settings" sizex="24px" />
         </span>
       </div>

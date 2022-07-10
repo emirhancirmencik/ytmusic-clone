@@ -51,5 +51,12 @@ html::-webkit-scrollbar-thumb:hover, .overflow-y-scroll::-webkit-scrollbar-thumb
 .fixed{
   margin-right:12px;
 }
+.fullscreen{
+  height: calc(100vh - 130px) 
+}
+
+.fullscreen-transform{
+  transform: translateY(calc((100vh - 63px) * -1)) 
+}
   
 }

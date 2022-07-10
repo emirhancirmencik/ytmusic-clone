@@ -1,13 +1,15 @@
 import React, { useRef } from "react";
 import SongListElement from "./SongList/SongListElement";
 import MiniListElement from "./MiniList/MiniListElement";
-import ArtistListElement from "./ArtistList/ArtistListElement";
 import ScrollButtons from "./ScrollButtons";
 import musicList from "static/music";
+import artistList from "static/artist";
+import ArtistListElement from "./ArtistList/ArtistListElement";
 
 function List(props) {
   const ref = useRef(0);
   const type = props.type;
+  const _map = Array(5);
 
   return (
     <div className="ytmedmax:w-[1264px] ytmedmin:w-[1489px] pt-8 mx-auto z-20">
@@ -25,7 +27,7 @@ function List(props) {
         <ScrollButtons
           element={ref}
           offsetNumber={type === "Mini" ? 3 : 6}
-          elementNumber={type === "Mini" ? 13 : 18}
+          elementNumber={type === "Mini" ? _map.length : musicList.length}
           marginValue={type === "Mini" ? 0 : 14}
         />
       </div>
@@ -35,174 +37,30 @@ function List(props) {
       >
         {type === "Mini" ? (
           <>
-            <div className="mylist flex flex-col w-1/3 flex-shrink-0">
-              <MiniListElement controls={props.controls} state={props.state} />
-              <MiniListElement controls={props.controls} state={props.state} />
-              <MiniListElement controls={props.controls} state={props.state} />
-              <MiniListElement controls={props.controls} state={props.state} />
-            </div>
-            <div className="flex flex-col w-1/3 flex-shrink-0">
-              <MiniListElement controls={props.controls} state={props.state} />
-              <MiniListElement controls={props.controls} state={props.state} />
-              <MiniListElement controls={props.controls} state={props.state} />
-              <MiniListElement controls={props.controls} state={props.state} />
-            </div>
-            <div className="flex flex-col w-1/3 flex-shrink-0">
-              <MiniListElement controls={props.controls} state={props.state} />
-              <MiniListElement controls={props.controls} state={props.state} />
-              <MiniListElement controls={props.controls} state={props.state} />
-              <MiniListElement controls={props.controls} state={props.state} />
-            </div>
-            <div className="flex flex-col w-1/3 flex-shrink-0">
-              <MiniListElement controls={props.controls} state={props.state} />
-              <MiniListElement controls={props.controls} state={props.state} />
-              <MiniListElement controls={props.controls} state={props.state} />
-              <MiniListElement controls={props.controls} state={props.state} />
-            </div>
-            <div className="flex flex-col w-1/3 flex-shrink-0">
-              <MiniListElement controls={props.controls} state={props.state} />
-              <MiniListElement controls={props.controls} state={props.state} />
-              <MiniListElement controls={props.controls} state={props.state} />
-              <MiniListElement controls={props.controls} state={props.state} />
-            </div>
-            <div className="flex flex-col w-1/3 flex-shrink-0">
-              <MiniListElement controls={props.controls} state={props.state} />
-              <MiniListElement controls={props.controls} state={props.state} />
-              <MiniListElement controls={props.controls} state={props.state} />
-              <MiniListElement controls={props.controls} state={props.state} />
-            </div>
-            <div className="mylist flex flex-col w-1/3 flex-shrink-0">
-              <MiniListElement controls={props.controls} state={props.state} />
-              <MiniListElement controls={props.controls} state={props.state} />
-              <MiniListElement controls={props.controls} state={props.state} />
-              <MiniListElement controls={props.controls} state={props.state} />
-            </div>
-            <div className="flex flex-col w-1/3 flex-shrink-0">
-              <MiniListElement controls={props.controls} state={props.state} />
-              <MiniListElement controls={props.controls} state={props.state} />
-              <MiniListElement controls={props.controls} state={props.state} />
-              <MiniListElement controls={props.controls} state={props.state} />
-            </div>
-            <div className="flex flex-col w-1/3 flex-shrink-0">
-              <MiniListElement controls={props.controls} state={props.state} />
-              <MiniListElement controls={props.controls} state={props.state} />
-              <MiniListElement controls={props.controls} state={props.state} />
-              <MiniListElement controls={props.controls} state={props.state} />
-            </div>
-            <div className="flex flex-col w-1/3 flex-shrink-0">
-              <MiniListElement controls={props.controls} state={props.state} />
-              <MiniListElement controls={props.controls} state={props.state} />
-              <MiniListElement controls={props.controls} state={props.state} />
-              <MiniListElement controls={props.controls} state={props.state} />
-            </div>
-            <div className="flex flex-col w-1/3 flex-shrink-0">
-              <MiniListElement controls={props.controls} state={props.state} />
-              <MiniListElement controls={props.controls} state={props.state} />
-              <MiniListElement controls={props.controls} state={props.state} />
-              <MiniListElement controls={props.controls} state={props.state} />
-            </div>
-            <div className="flex flex-col w-1/3 flex-shrink-0">
-              <MiniListElement controls={props.controls} state={props.state} />
-              <MiniListElement controls={props.controls} state={props.state} />
-              <MiniListElement controls={props.controls} state={props.state} />
-              <MiniListElement controls={props.controls} state={props.state} />
-            </div>
-            <div className="flex flex-col w-1/3 flex-shrink-0">
-              <MiniListElement controls={props.controls} state={props.state} />
-              <MiniListElement controls={props.controls} state={props.state} />
-              <MiniListElement controls={props.controls} state={props.state} />
-              <MiniListElement controls={props.controls} state={props.state} />
-            </div>
+            {[..._map].map((_, i) => {
+              return (
+                <div className="mylist flex flex-col w-1/3 flex-shrink-0">
+                  {musicList.map((song, j) => {
+                    if (j >= i * 4 && j <= (i + 1) * 4 - 1)
+                      return <MiniListElement song={song} />;
+                    return "";
+                  })}
+                </div>
+              );
+            })}
           </>
         ) : (
           <>
             <div className="flex mylist justify-between flex-shrink-0">
-              <SongListElement
-                controls={props.controls}
-                state={props.state}
-                song={musicList[0]}
-              />
-              <ArtistListElement />
-              <SongListElement
-                controls={props.controls}
-                state={props.state}
-                song={musicList[1]}
-              />
-              <SongListElement
-                controls={props.controls}
-                state={props.state}
-                song={musicList[2]}
-              />
-              <SongListElement
-                controls={props.controls}
-                state={props.state}
-                song={musicList[3]}
-              />
-              <SongListElement
-                controls={props.controls}
-                state={props.state}
-                song={musicList[4]}
-              />
-              <SongListElement
-                controls={props.controls}
-                state={props.state}
-                song={musicList[5]}
-              />
-              <SongListElement
-                controls={props.controls}
-                state={props.state}
-                song={musicList[6]}
-              />
-              <SongListElement
-                controls={props.controls}
-                state={props.state}
-                song={musicList[7]}
-              />
-              <SongListElement
-                controls={props.controls}
-                state={props.state}
-                song={musicList[8]}
-              />
-              <SongListElement
-                controls={props.controls}
-                state={props.state}
-                song={musicList[9]}
-              />
-              <SongListElement
-                controls={props.controls}
-                state={props.state}
-                song={musicList[10]}
-              />
-              <SongListElement
-                controls={props.controls}
-                state={props.state}
-                song={musicList[11]}
-              />
-              <SongListElement
-                controls={props.controls}
-                state={props.state}
-                song={musicList[12]}
-              />
-              <SongListElement
-                controls={props.controls}
-                state={props.state}
-                song={musicList[13]}
-              />
-              <SongListElement
-                controls={props.controls}
-                state={props.state}
-                song={musicList[14]}
-              />
-              <SongListElement
-                controls={props.controls}
-                state={props.state}
-                song={musicList[15]}
-              />
-              <SongListElement
-                controls={props.controls}
-                state={props.state}
-                song={musicList[16]}
-              />
+              {musicList.map((song, index) => {
+                if (index !== 3 && index !== 6 && index !== 9)
+                  return <SongListElement song={song} />;
+                else {
+                  return (
+                    <ArtistListElement artist={artistList[index / 3 - 1]} />
+                  );
+                }
+              })}
             </div>
           </>
         )}

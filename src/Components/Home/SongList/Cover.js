@@ -5,13 +5,14 @@ import {
   setButtonPosition,
   setDropdownActive,
 } from "../../../redux/dom/domSlicer";
-import { setCurrentSong } from "../../../redux/music/musicSlicer";
+import { setCurrentSong, setIsPaused } from "../../../redux/music/musicSlicer";
 import {
   useRect,
   useWindowDimensions,
 } from "../../../hooks/useWindowDimensions";
-function Cover({ song, controls, state }) {
+function Cover({ song }) {
   const currentSong = useSelector((state) => state.music.currentSong);
+  const isPaused = useSelector((state) => state.music.isPaused);
 
   const myref = useRef(0);
   const dispatch = useDispatch();
@@ -41,12 +42,9 @@ function Cover({ song, controls, state }) {
   function handlePlayButton() {
     if (currentSong?.src !== song?.src) {
       dispatch(setCurrentSong(song));
+      dispatch(setIsPaused(false));
     } else {
-      if (state.paused) {
-        controls.play();
-      } else {
-        controls.pause();
-      }
+      dispatch(setIsPaused(!isPaused));
     }
   }
 
@@ -85,7 +83,7 @@ function Cover({ song, controls, state }) {
             name={
               currentSong.src !== song.src
                 ? "play"
-                : state.paused
+                : isPaused
                 ? "play"
                 : "pause"
             }

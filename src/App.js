@@ -1,25 +1,32 @@
 import Content from "Components/Content";
 import BottomPlayer from "Components/BottomPlayer";
 import Dropdown from "Components/Dropdown";
+import FullScreen from "Components/FullScreen";
 import { useSelector } from "react-redux";
-import { useAudio } from "react-use";
+import { useEffect } from "react";
 
 function App() {
   const currentSong = useSelector((state) => state.music.currentSong);
+  const fullScreen = useSelector((state) => state.dom.fullScreen);
 
-  const [audio, state, controls, ref] = useAudio({
-    src: currentSong.src || "",
-    autoPlay: true,
-  });
+  useEffect(() => {
+    if (fullScreen) {
+      document.body.style.overflowY = "hidden";
+      document.body.style.paddingRight = "12px";
+    } else {
+      document.body.style.overflow = "auto";
+      document.body.style.paddingRight = "";
+    }
+  }, [fullScreen]);
 
   return (
     <>
-      {audio}
       <Dropdown />
+      {currentSong !== "" && <BottomPlayer />}
+      <FullScreen fullScreen={fullScreen} song={currentSong} />
       <div className="content">
-        <Content controls={controls} state={state} />
+        <Content />
       </div>
-      {currentSong !== "" && <BottomPlayer controls={controls} state={state} />}
     </>
   );
 }
