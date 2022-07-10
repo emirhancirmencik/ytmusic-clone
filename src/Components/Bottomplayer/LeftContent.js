@@ -10,8 +10,10 @@ function LeftContent({ duration, time, controls, audio }) {
   function handleClick() {
     if (audio?.paused) {
       dispatch(setIsPaused(false));
+      controls.play();
     } else {
       dispatch(setIsPaused(true));
+      controls.pause();
     }
     dispatch(setFullScreen());
   }

@@ -22,10 +22,12 @@ function MiniListElement({ song }) {
     <div className="group w-full flex mb-2 ml-7 pl-1 z-10 relative">
       <Cover song={song} handlePlayButton={handlePlayButton} />
       <div className="flex ml-3 w-2/3 font-light flex-col text-white group-hover:w-1/3 whitespace-nowrap text-ellipsis overflow-clip">
-        <div className="hover:underline cursor-pointer">{song.name}</div>
+        <div className="hover:underline cursor-pointer group-hover:w-5/6 whitespace-nowrap text-ellipsis overflow-clip">
+          {song.name}
+        </div>
         <div className="inline-flex w-full items-center text-whitealpha1">
           <Icon name="cast" sizex="20px" />
-          <div href="#/" className="ml-1 hover:underline ">
+          <div href="#/" className="ml-1 hover:underline cursor-pointer">
             {song.artist}
           </div>
           <div className="ml-1 cursor-default select-none truncate">

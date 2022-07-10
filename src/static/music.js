@@ -56,7 +56,7 @@ const musicList = [
   {
     coverb: cover2b,
     cover: cover2,
-    src: "https://cdn.freesound.org/previews/320/320879_5089431-lq.mp3",
+    src: "https://cdn.freesound.org/previews/44/44074_111413-lq.mp3",
     artist: "Freesound",
     name: "Lorem Ipsum 3",
   },
@@ -70,7 +70,7 @@ const musicList = [
   {
     coverb: cover4b,
     cover: cover4,
-    src: "https://cdn.freesound.org/previews/399/399597_7237125-lq.mp3",
+    src: "https://cdn.freesound.org/previews/219/219317_1661766-lq.mp3",
     artist: "Freesound",
     name: "Lorem Ipsum 5",
   },
@@ -84,14 +84,14 @@ const musicList = [
   {
     coverb: cover6b,
     cover: cover6,
-    src: "https://cdn.freesound.org/previews/251/251255_3758684-lq.mp3",
+    src: "https://cdn.freesound.org/previews/536/536162_10403690-lq.mp3",
     artist: "Freesound",
     name: "Lorem Ipsum 7",
   },
   {
     coverb: cover7b,
     cover: cover7,
-    src: "https://cdn.freesound.org/previews/401/401795_4745081-lq.mp3",
+    src: "https://cdn.freesound.org/previews/500/500019_9996727-lq.mp3",
     artist: "Freesound",
     name: "Lorem Ipsum 8",
   },
@@ -119,7 +119,7 @@ const musicList = [
   {
     coverb: cover11b,
     cover: cover11,
-    src: "https://cdn.freesound.org/previews/587/587385_11291077-lq.mp3",
+    src: "https://cdn.freesound.org/previews/240/240376_2376154-lq.mp3",
     artist: "Freesound",
     name: "Lorem Ipsum 12",
   },
@@ -133,7 +133,7 @@ const musicList = [
   {
     coverb: cover13b,
     cover: cover13,
-    src: "https://cdn.freesound.org/previews/505/505673_8584880-lq.mp3",
+    src: "https://cdn.freesound.org/previews/495/495482_3908940-lq.mp3",
     artist: "Freesound",
     name: "Lorem Ipsum 14",
   },
@@ -147,7 +147,7 @@ const musicList = [
   {
     coverb: cover15b,
     cover: cover15,
-    src: "https://cdn.freesound.org/previews/569/569784_6627602-lq.mp3",
+    src: "https://cdn.freesound.org/previews/266/266415_4013639-lq.mp3",
     artist: "Freesound",
     name: "Lorem Ipsum 16",
   },

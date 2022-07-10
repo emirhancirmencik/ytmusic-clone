@@ -1,6 +1,6 @@
 /* eslint-disable no-unused-vars */
 /* eslint-disable react-hooks/exhaustive-deps */
-import React, { useEffect } from "react";
+import React, { useEffect, useMemo } from "react";
 import LeftContent from "./Bottomplayer/LeftContent";
 import RightContent from "./Bottomplayer/RightContent";
 import CenterContent from "./Bottomplayer/CenterContent";
@@ -9,6 +9,8 @@ import { useAudio } from "react-use";
 import { secondsToTime } from "utils";
 import { useDispatch, useSelector } from "react-redux";
 import { setFullScreen } from "redux/dom/domSlicer";
+import { setList } from "redux/music/musicSlicer";
+import musicList from "static/music";
 
 function BottomPlayer() {
   const currentSong = useSelector((state) => state.music.currentSong);
@@ -27,6 +29,10 @@ function BottomPlayer() {
       controls.play();
     }
   }, [isPaused]);
+
+  useMemo(() => {
+    dispatch(setList(musicList));
+  }, []);
 
   return (
     <div

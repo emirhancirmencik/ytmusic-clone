@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useMemo, useRef } from "react";
 import SongListElement from "./SongList/SongListElement";
 import MiniListElement from "./MiniList/MiniListElement";
 import ScrollButtons from "./ScrollButtons";
