@@ -10,7 +10,7 @@ function ProgressBar({ audio, controls }) {
       onClick={() => dispatch(setFullScreen())}
     >
       <MyRange
-        step={0.1}
+        step={0.001}
         min={0}
         max={audio?.duration || 1}
         value={audio?.time}

@@ -11,10 +11,13 @@ import { useDispatch, useSelector } from "react-redux";
 import { setFullScreen } from "redux/dom/domSlicer";
 import { setCurrentSong, setList } from "redux/music/musicSlicer";
 import musicList from "static/music";
+import { useMemo } from "react";
 
 function BottomPlayer() {
   const currentSong = useSelector((state) => state.music.currentSong);
+  const nextSong = useSelector((state) => state.music.nextSong);
   const isPaused = useSelector((state) => state.music.isPaused);
+  const loop = useSelector((state) => state.music.loop);
   const dispatch = useDispatch();
 
   const [audio, state, controls, ref] = useAudio({
@@ -34,6 +37,25 @@ function BottomPlayer() {
     dispatch(setList(musicList));
     dispatch(setCurrentSong(currentSong));
   }, []);
+
+  useEffect(() => {
+    console.log("paused");
+    console.log(state);
+    if (
+      state?.duration - state?.time < 1 &&
+      nextSong !== "" &&
+      state?.duration !== 0 &&
+      state?.paused === true
+    ) {
+      console.log("finished");
+      if (loop === "one") {
+        state.duration = 0;
+        controls.play();
+      } else {
+        dispatch(setCurrentSong(nextSong));
+      }
+    }
+  }, [state.paused]);
 
   return (
     <div

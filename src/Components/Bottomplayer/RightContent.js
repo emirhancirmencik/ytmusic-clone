@@ -2,10 +2,13 @@ import { Icon } from "image/Icons";
 import React, { useMemo } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { setFullScreen } from "redux/dom/domSlicer";
+import { setCurrentSong, setLoop } from "redux/music/musicSlicer";
 import MyRange from "./MyRange";
 
 function RightContent({ audio, controls }) {
   const fullScreen = useSelector((state) => state.dom.fullScreen);
+  const loop = useSelector((state) => state.music.loop);
+  const currentSong = useSelector((state) => state.music.currentSong);
   const dispatch = useDispatch();
 
   const volumeIcon = useMemo(() => {
@@ -16,6 +19,16 @@ function RightContent({ audio, controls }) {
       return "volume";
     }
   }, [audio?.volume, audio?.muted]);
+
+  function handleLoop() {
+    if (loop === "off") {
+      dispatch(setLoop("repeat"));
+    } else if (loop === "repeat") {
+      dispatch(setLoop("one"));
+    } else {
+      dispatch(setLoop("off"));
+    }
+  }
 
   return (
     <div className="flex items-center w-[292px] justify-end">
@@ -48,10 +61,20 @@ function RightContent({ audio, controls }) {
         </span>
       </span>
       <span
-        className="cursor-pointer w-10 h-10 text-whitealpha1 p-2 mr-2"
-        onClick={() => dispatch(setFullScreen())}
+        className={`cursor-pointer w-10 h-10 ${
+          loop === "off" && "text-whitealpha1"
+        } p-2 mr-2`}
+        onClick={() => {
+          dispatch(setFullScreen());
+          handleLoop();
+          dispatch(setCurrentSong(currentSong));
+        }}
       >
-        <Icon name="repeat" sizex="24px" className="" />
+        <Icon
+          name={loop === "one" ? "repeatOne" : "repeat"}
+          sizex="24px"
+          className=""
+        />
       </span>
       <span
         className="cursor-pointer w-10 h-10 p-2 mr-2 text-whitealpha1"

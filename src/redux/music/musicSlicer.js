@@ -20,35 +20,32 @@ export const musicSlicer = createSlice({
 
       const length = state.list.length;
 
-      if (state.loop === "one") {
-        state.nextSong = state.currentSong;
-        state.prevSong = state.currentSong;
-      } else {
-        if (index + 1 > length) {
-          if (state.loop === "off") {
-            state.nextSong = "";
-            state.prevSong = state.list[index - 1];
-          }
-          if (state.loop === "repeat") {
-            state.nextSong = state.list[0];
-            state.prevSong = state.list[index - 1];
-          }
-        } else if (index - 1 < 0) {
-          if (state.loop === "off") {
-            state.nextSong = state.list[index + 1];
-            state.prevSong = state.list[0];
-          }
-          if (state.loop === "repeat") {
-            state.nextSong = state.list[index + 1];
-            state.prevSong = state.list[state.list.length - 1];
-          }
+      console.log(length, index);
+
+      if (index + 1 > length - 1) {
+        if (state.loop === "repeat") {
+          state.nextSong = state.list[0];
+          state.prevSong = state.list[index - 1];
         } else {
-          state.nextSong = state.list[index + 1];
+          state.nextSong = state.currentSong;
           state.prevSong = state.list[index - 1];
         }
+      } else if (index - 1 < 0) {
+        if (state.loop === "repeat") {
+          state.nextSong = state.list[index + 1];
+          state.prevSong = state.list[state.list.length - 1];
+        } else {
+          state.nextSong = state.list[index + 1];
+          state.prevSong = state.list[0];
+        }
+      } else {
+        state.nextSong = state.list[index + 1];
+        state.prevSong = state.list[index - 1];
       }
     },
-    setNextPrevSong: (state) => {},
+    setLoop: (state, action) => {
+      state.loop = action.payload;
+    },
     setIsPaused: (state, action) => {
       state.isPaused = action.payload;
     },
@@ -59,6 +56,7 @@ export const musicSlicer = createSlice({
 });
 
 // Action creators are generated for each case reducer function
-export const { setCurrentSong, setIsPaused, setList } = musicSlicer.actions;
+export const { setCurrentSong, setIsPaused, setList, setLoop } =
+  musicSlicer.actions;
 
 export default musicSlicer.reducer;

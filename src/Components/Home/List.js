@@ -39,7 +39,7 @@ function List(props) {
           <>
             {[..._map].map((_, i) => {
               return (
-                <div className="mylist flex flex-col w-1/3 flex-shrink-0">
+                <div className="mylist flex flex-col-reverse w-1/3 flex-shrink-0">
                   {musicList.map((song, j) => {
                     if (j >= i * 4 && j <= (i + 1) * 4 - 1)
                       return <MiniListElement song={song} />;
