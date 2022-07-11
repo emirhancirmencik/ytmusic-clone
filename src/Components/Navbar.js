@@ -46,21 +46,21 @@ function Navbar() {
       </div>
       <div className="h-16 flex items-center justify-between">
         <div className="p-2 tabletmax:hidden items-start">
-          <a href="/">
+          <span href="/" className="cursor-pointer">
             <Icon sizex="26" name="chromecast" />
-          </a>
+          </span>
         </div>
         <div className="p-2">
-          <a href="/">
+          <span href="/" className="cursor-pointer">
             <Icon sizex="26" name="settings" />
-          </a>
+          </span>
         </div>
-        <a
+        <span
           href="#."
-          className="bg-white font-bold text-sm rounded-sm text-3 h-8 inline-flex items-center min-w-[81.25px] whitespace-nowrap text-lightthemetext py-0 px-4 ml-2 tabletmax:mr-5"
+          className="bg-white cursor-pointer font-bold text-sm rounded-sm text-3 h-8 inline-flex items-center min-w-[81.25px] whitespace-nowrap text-lightthemetext py-0 px-4 ml-2 tabletmax:mr-5"
         >
           SIGN IN
-        </a>
+        </span>
       </div>
     </nav>
   );

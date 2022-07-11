@@ -468,7 +468,7 @@ html::-webkit-scrollbar-thumb:hover,  .overflow-y-scroll::-webkit-scrollbar-thum
 }
 
 .fullscreen{
-  height: calc(100vh - 130px)
+  height: calc(100vh - 135px)
 }
 
 .fullscreen-transform{
@@ -652,6 +652,22 @@ html::-webkit-scrollbar-thumb:hover,  .overflow-y-scroll::-webkit-scrollbar-thum
   top: 100%;
 }
 
+.top-3 {
+  top: 0.75rem;
+}
+
+.right-3 {
+  right: 0.75rem;
+}
+
+.top-5 {
+  top: 1.25rem;
+}
+
+.right-5 {
+  right: 1.25rem;
+}
+
 .right-0 {
   right: 0px;
 }
@@ -680,6 +696,10 @@ html::-webkit-scrollbar-thumb:hover,  .overflow-y-scroll::-webkit-scrollbar-thum
   z-index: 999;
 }
 
+.z-20 {
+  z-index: 20;
+}
+
 .z-30 {
   z-index: 30;
 }
@@ -692,8 +712,8 @@ html::-webkit-scrollbar-thumb:hover,  .overflow-y-scroll::-webkit-scrollbar-thum
   z-index: 10;
 }
 
-.z-20 {
-  z-index: 20;
+.z-\[998\] {
+  z-index: 998;
 }
 
 .mx-2 {
@@ -785,6 +805,10 @@ html::-webkit-scrollbar-thumb:hover,  .overflow-y-scroll::-webkit-scrollbar-thum
 
 .box-border {
   box-sizing: border-box;
+}
+
+.block {
+  display: block;
 }
 
 .inline {
@@ -899,6 +923,10 @@ html::-webkit-scrollbar-thumb:hover,  .overflow-y-scroll::-webkit-scrollbar-thum
   width: 3rem;
 }
 
+.w-screen {
+  width: 100vw;
+}
+
 .w-8 {
   width: 2rem;
 }
@@ -948,20 +976,6 @@ html::-webkit-scrollbar-thumb:hover,  .overflow-y-scroll::-webkit-scrollbar-thum
           transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
-.scale-\[5\] {
-  --tw-scale-x: 5;
-  --tw-scale-y: 5;
-  -webkit-transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
-          transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
-}
-
-.scale-\[3\] {
-  --tw-scale-x: 3;
-  --tw-scale-y: 3;
-  -webkit-transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
-          transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
-}
-
 .scale-\[4\] {
   --tw-scale-x: 4;
   --tw-scale-y: 4;
@@ -984,10 +998,6 @@ html::-webkit-scrollbar-thumb:hover,  .overflow-y-scroll::-webkit-scrollbar-thum
 
 .resize {
   resize: both;
-}
-
-.flex-row-reverse {
-  flex-direction: row-reverse;
 }
 
 .flex-col {
@@ -1336,8 +1346,8 @@ html::-webkit-scrollbar-thumb:hover,  .overflow-y-scroll::-webkit-scrollbar-thum
   color: rgb(170 170 170 / var(--tw-text-opacity));
 }
 
-.opacity-50 {
-  opacity: 0.5;
+.opacity-75 {
+  opacity: 0.75;
 }
 
 .opacity-0 {
@@ -1350,10 +1360,6 @@ html::-webkit-scrollbar-thumb:hover,  .overflow-y-scroll::-webkit-scrollbar-thum
 
 .opacity-40 {
   opacity: 0.4;
-}
-
-.opacity-75 {
-  opacity: 0.75;
 }
 
 .transition {

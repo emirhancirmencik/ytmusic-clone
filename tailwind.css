@@ -52,7 +52,7 @@ html::-webkit-scrollbar-thumb:hover, .overflow-y-scroll::-webkit-scrollbar-thumb
   margin-right:12px;
 }
 .fullscreen{
-  height: calc(100vh - 130px) 
+  height: calc(100vh - 135px) 
 }
 
 .fullscreen-transform{

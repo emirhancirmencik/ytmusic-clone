@@ -6,7 +6,7 @@ function ProgressBar({ audio, controls }) {
   const dispatch = useDispatch();
   return (
     <div
-      className="absolute w-full top-[-17px] group"
+      className="absolute w-full top-[-17px] group z-[1000]"
       onClick={() => dispatch(setFullScreen())}
     >
       <MyRange

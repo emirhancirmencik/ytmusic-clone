@@ -5,6 +5,7 @@ import ScrollButtons from "./ScrollButtons";
 import musicList from "static/music";
 import artistList from "static/artist";
 import ArtistListElement from "./ArtistList/ArtistListElement";
+import { nanoid } from "@reduxjs/toolkit";
 
 function List(props) {
   const ref = useRef(0);
@@ -39,10 +40,13 @@ function List(props) {
           <>
             {[..._map].map((_, i) => {
               return (
-                <div className="mylist flex flex-col-reverse w-1/3 flex-shrink-0">
+                <div
+                  className="mylist flex flex-col-reverse w-1/3 flex-shrink-0"
+                  key={nanoid(3)}
+                >
                   {musicList.map((song, j) => {
                     if (j >= i * 4 && j <= (i + 1) * 4 - 1)
-                      return <MiniListElement song={song} />;
+                      return <MiniListElement song={song} key={nanoid(3)} />;
                     return "";
                   })}
                 </div>
@@ -54,10 +58,13 @@ function List(props) {
             <div className="flex mylist justify-between flex-shrink-0">
               {musicList.map((song, index) => {
                 if (index !== 3 && index !== 6 && index !== 9)
-                  return <SongListElement song={song} />;
+                  return <SongListElement song={song} key={nanoid(3)} />;
                 else {
                   return (
-                    <ArtistListElement artist={artistList[index / 3 - 1]} />
+                    <ArtistListElement
+                      artist={artistList[index / 3 - 1]}
+                      key={nanoid(3)}
+                    />
                   );
                 }
               })}

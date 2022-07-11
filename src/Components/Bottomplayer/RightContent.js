@@ -5,7 +5,7 @@ import { setFullScreen } from "redux/dom/domSlicer";
 import { setCurrentSong, setLoop } from "redux/music/musicSlicer";
 import MyRange from "./MyRange";
 
-function RightContent({ audio, controls }) {
+function RightContent({ audio, controls, fullScreenIcon, handle }) {
   const fullScreen = useSelector((state) => state.dom.fullScreen);
   const loop = useSelector((state) => state.music.loop);
   const currentSong = useSelector((state) => state.music.currentSong);
@@ -83,11 +83,16 @@ function RightContent({ audio, controls }) {
         <Icon name="shuffle" sizex="24px" />
       </span>
       <span
-        className={`cursor-pointer w-12 h-12 p-2 mr-2 text-whitealpha1 ${
-          fullScreen && "rotate-180 text-white"
+        className={`cursor-pointer w-12 h-12 p-2 mr-2  ${
+          fullScreen
+            ? "rotate-180 text-white"
+            : fullScreenIcon === "fullscreen2"
+            ? "text-white"
+            : "text-whitealpha1"
         }`}
+        onClick={fullScreenIcon === "fullscreen2" ? handle.exit : () => {}}
       >
-        <Icon name="fullscreen" sizex="32px" />
+        <Icon name={fullScreenIcon} sizex="32px" />
       </span>
     </div>
   );

@@ -78,7 +78,6 @@ function Dropdown() {
   const dispatch = useDispatch();
 
   function handleClick() {
-    console.log(position);
     dispatch(setDropdownActive("mini"));
   }
 

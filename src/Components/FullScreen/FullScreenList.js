@@ -4,6 +4,7 @@ import Cover from "Components/Home/MiniList/Cover";
 import { Icon } from "image/Icons";
 import { useDispatch } from "react-redux";
 import { setCurrentSong, setIsPaused } from "redux/music/musicSlicer";
+import { nanoid } from "@reduxjs/toolkit";
 
 function FullScreenList({ song }) {
   const musicList = useSelector((state) => state.music.list);
@@ -21,12 +22,13 @@ function FullScreenList({ song }) {
   return (
     <div className="w-full overflow-y-scroll flex flex-col fullscreen-scrollbar">
       {musicList &&
-        musicList.map((song, index) => {
+        musicList.map((song) => {
           return (
             <div
               className={`group w-full flex pl-3 z-10 relative py-1 border-b-[1px] items-center border-whitealpha3 ${
                 song.src === currentSong.src && "bg-whitealpha3"
               }`}
+              key={nanoid(3)}
             >
               <div className="flex cursor-pointer items-center">
                 <div className="relative pt-[100%] w-8 h-8">

@@ -23,7 +23,6 @@ function App() {
     <>
       <Dropdown />
       {currentSong !== "" && <BottomPlayer />}
-      <FullScreen fullScreen={fullScreen} song={currentSong} />
       <div className="content">
         <Content />
       </div>

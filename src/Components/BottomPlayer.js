@@ -11,13 +11,14 @@ import { useDispatch, useSelector } from "react-redux";
 import { setFullScreen } from "redux/dom/domSlicer";
 import { setCurrentSong, setList } from "redux/music/musicSlicer";
 import musicList from "static/music";
-import { useMemo } from "react";
+import FullScreen from "./FullScreen";
 
 function BottomPlayer() {
   const currentSong = useSelector((state) => state.music.currentSong);
   const nextSong = useSelector((state) => state.music.nextSong);
   const isPaused = useSelector((state) => state.music.isPaused);
   const loop = useSelector((state) => state.music.loop);
+  const fullScreen = useSelector((state) => state.dom.fullScreen);
   const dispatch = useDispatch();
 
   const [audio, state, controls, ref] = useAudio({
@@ -39,8 +40,6 @@ function BottomPlayer() {
   }, []);
 
   useEffect(() => {
-    console.log("paused");
-    console.log(state);
     if (
       state?.duration - state?.time < 1 &&
       nextSong !== "" &&
@@ -58,21 +57,33 @@ function BottomPlayer() {
   }, [state.paused]);
 
   return (
-    <div
-      className="h-[72px] bg-black1 fixed w-full bottom-0 z-[1000] flex justify-between group-1"
-      onClick={() => dispatch(setFullScreen())}
-    >
-      {audio}
-      <ProgressBar controls={controls} audio={state} />
-      <LeftContent
+    <>
+      <div
+        className="h-[72px] bg-black1 fixed w-full bottom-0 z-[1000] flex justify-between group-1"
+        onClick={() => dispatch(setFullScreen())}
+      >
+        {audio}
+        <ProgressBar controls={controls} audio={state} />
+        <LeftContent
+          controls={controls}
+          duration={secondsToTime(state?.duration)}
+          time={secondsToTime(state?.time)}
+          audio={state}
+        />
+        <CenterContent />
+        <RightContent
+          controls={controls}
+          audio={state}
+          fullScreenIcon={"fullscreen"}
+        />
+      </div>
+      <FullScreen
+        fullScreen={fullScreen}
+        song={currentSong}
         controls={controls}
-        duration={secondsToTime(state?.duration)}
-        time={secondsToTime(state?.time)}
-        audio={state}
+        state={state}
       />
-      <CenterContent />
-      <RightContent controls={controls} audio={state} />
-    </div>
+    </>
   );
 }
 
