@@ -25,6 +25,7 @@ module.exports = {
         whitealpha2: "rgb(255,255,255,0.3)",
         whitealpha3: "rgb(255,255,255,0.12)",
         whitealpha4: "rgb(255,255,255,0.05)",
+        whitealpha5: "rgb(255,255,255,0.15)",
         blackalpha1: "rgb(0,0,0,0.4)",
         grey2: `#aaa`,
         grey3: `#909090`,

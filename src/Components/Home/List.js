@@ -46,7 +46,7 @@ function List(props) {
             {[..._map].map((_, i) => {
               return (
                 <div
-                  className="mylist flex flex-col-reverse w-1/3 flex-shrink-0"
+                  className="mylist flex flex-col w-1/3 flex-shrink-0"
                   key={nanoid()}
                 >
                   {list?.map((song, j) => {
