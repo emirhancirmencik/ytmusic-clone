@@ -1,11 +1,13 @@
 import { Icon } from "image/Icons";
 import React from "react";
-import { setIsPaused } from "../../redux/music/musicSlicer";
-import { useDispatch } from "react-redux";
+import { setIsPaused, setCurrentSong } from "../../redux/music/musicSlicer";
+import { useDispatch, useSelector } from "react-redux";
 import { setFullScreen } from "redux/dom/domSlicer";
 
 function LeftContent({ duration, time, controls, audio }) {
   const dispatch = useDispatch();
+  const prev = useSelector((state) => state.music.prevSong);
+  const next = useSelector((state) => state.music.nextSong);
 
   function handleClick() {
     if (audio?.paused) {
@@ -23,7 +25,10 @@ function LeftContent({ duration, time, controls, audio }) {
       <div className="flex text-white items-center">
         <div
           className="ml-2 p-2 items-center w-10 h-10 cursor-pointer"
-          onClick={() => dispatch(setFullScreen())}
+          onClick={() => {
+            dispatch(setFullScreen());
+            dispatch(setCurrentSong(prev));
+          }}
         >
           <Icon sizex="24" name="prevSong" />
         </div>
@@ -35,7 +40,10 @@ function LeftContent({ duration, time, controls, audio }) {
         </div>
         <div
           className="ml-2 p-2 rotate-180 w-10 h-10 cursor-pointer"
-          onClick={() => dispatch(setFullScreen())}
+          onClick={() => {
+            dispatch(setFullScreen());
+            dispatch(setCurrentSong(next));
+          }}
         >
           <Icon sizex="24" name="prevSong" />
         </div>

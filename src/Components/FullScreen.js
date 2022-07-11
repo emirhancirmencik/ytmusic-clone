@@ -48,8 +48,8 @@ function FullScreen({ fullScreen, song }) {
               <span
                 className={` bg-black rounded-full ${
                   iconHidden
-                    ? "opacity-50 scale-0"
-                    : "transition duration-500 opacity-0  scale-[5]"
+                    ? "opacity-75 scale-0"
+                    : "transition duration-500 opacity-0  scale-[4]"
                 }`}
               >
                 <Icon

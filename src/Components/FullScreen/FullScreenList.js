@@ -24,7 +24,7 @@ function FullScreenList({ song }) {
         musicList.map((song, index) => {
           return (
             <div
-              className={`group w-full flex pl-1 z-10 relative pt-1 border-b-[1px] items-center border-whitealpha3 ${
+              className={`group w-full flex pl-3 z-10 relative py-1 border-b-[1px] items-center border-whitealpha3 ${
                 song.src === currentSong.src && "bg-whitealpha3"
               }`}
             >
