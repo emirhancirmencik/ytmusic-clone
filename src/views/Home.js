@@ -19,6 +19,8 @@ function Home() {
         type="Album"
       />
       <List header="Quick picks" type="Mini" />
+      <List header="Quick picks" type="Album" />
+      <List header="Quick picks" type="Mini" />
     </div>
   );
 }

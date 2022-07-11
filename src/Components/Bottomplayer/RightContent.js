@@ -2,7 +2,7 @@ import { Icon } from "image/Icons";
 import React, { useMemo } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { setFullScreen } from "redux/dom/domSlicer";
-import { setCurrentSong, setLoop } from "redux/music/musicSlicer";
+import { setCurrentSong, setLoop, shuffle } from "redux/music/musicSlicer";
 import MyRange from "./MyRange";
 
 function RightContent({ audio, controls, fullScreenIcon, handle }) {
@@ -78,7 +78,11 @@ function RightContent({ audio, controls, fullScreenIcon, handle }) {
       </span>
       <span
         className="cursor-pointer w-10 h-10 p-2 mr-2 text-whitealpha1"
-        onClick={() => dispatch(setFullScreen())}
+        onClick={() => {
+          dispatch(setFullScreen());
+          dispatch(shuffle());
+          dispatch(setCurrentSong(currentSong));
+        }}
       >
         <Icon name="shuffle" sizex="24px" />
       </span>

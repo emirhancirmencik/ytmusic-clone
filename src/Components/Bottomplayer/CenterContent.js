@@ -3,7 +3,7 @@ import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { setFullScreen } from "redux/dom/domSlicer";
 
-function CenterContent() {
+const CenterContent = React.memo(function CenterContent() {
   const dispatch = useDispatch();
   const currentSong = useSelector((state) => state.music.currentSong);
   return (
@@ -52,6 +52,6 @@ function CenterContent() {
       </div>
     </div>
   );
-}
+});
 
 export default CenterContent;

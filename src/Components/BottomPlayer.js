@@ -46,7 +46,6 @@ function BottomPlayer() {
       state?.duration !== 0 &&
       state?.paused === true
     ) {
-      console.log("finished");
       if (loop === "one") {
         state.duration = 0;
         controls.play();
@@ -64,12 +63,7 @@ function BottomPlayer() {
       >
         {audio}
         <ProgressBar controls={controls} audio={state} />
-        <LeftContent
-          controls={controls}
-          duration={secondsToTime(state?.duration)}
-          time={secondsToTime(state?.time)}
-          audio={state}
-        />
+        <LeftContent />
         <CenterContent />
         <RightContent
           controls={controls}

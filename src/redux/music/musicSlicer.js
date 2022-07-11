@@ -1,4 +1,4 @@
-import { createSlice, current } from "@reduxjs/toolkit";
+import { createSlice } from "@reduxjs/toolkit";
 
 export const musicSlicer = createSlice({
   name: "music",
@@ -19,8 +19,6 @@ export const musicSlicer = createSlice({
       });
 
       const length = state.list.length;
-
-      console.log(length, index);
 
       if (index + 1 > length - 1) {
         if (state.loop === "repeat") {
@@ -52,11 +50,25 @@ export const musicSlicer = createSlice({
     setList: (state, action) => {
       state.list = action.payload;
     },
+    shuffle: (state) => {
+      const index = state.list.findIndex((song) => {
+        return song.src === state.currentSong.src;
+      });
+
+      let myList = [];
+      let _list = [...state.list];
+      let song = _list.splice(index, 1);
+
+      myList.push(song[0]);
+      _list.sort(() => Math.random() - 0.5);
+      myList.push(..._list);
+      state.list = myList;
+    },
   },
 });
 
 // Action creators are generated for each case reducer function
-export const { setCurrentSong, setIsPaused, setList, setLoop } =
+export const { setCurrentSong, setIsPaused, setList, setLoop, shuffle } =
   musicSlicer.actions;
 
 export default musicSlicer.reducer;

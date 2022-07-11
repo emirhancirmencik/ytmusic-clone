@@ -8,6 +8,7 @@ import {
   useFullScreenHandle,
 } from "react-full-screen";
 import FullScreen2 from "./FullScreen/FullScreen2";
+import Cover from "./FullScreen/Cover";
 
 function FullScreen({ fullScreen, song, controls, state }) {
   const [iconHidden, setIconHidden] = useState(true);
@@ -40,52 +41,18 @@ function FullScreen({ fullScreen, song, controls, state }) {
             controls={controls}
             state={state}
             handle={handle}
+            iconHidden={iconHidden}
           />
         </div>
       </GetFullScreen>
       <div className="flex flex-shrink-0 w-full h-full items-center">
-        <div className="flex-1 flex-shrink-0 mb-16 mt-8 flex items-center ytmedmax:px-[7%] ytmedmin:px-[10%]">
-          <div className="relative pt-[100%] flex items-center h-full w-full group">
-            <img
-              src={song.coverb}
-              alt="cover"
-              className="absolute inset-0 w-full h-full object-cover"
-            />
-            <span
-              className="top-3 right-3 absolute text-white z-20 hidden group-hover:flex cursor-pointer"
-              onClick={handle.enter}
-            >
-              <Icon name={"fullscreen2"} sizex="30px" />
-            </span>
-            <div
-              className="absolute inset-0 w-full h-full hidden items-center justify-center group-hover:flex"
-              style={{
-                backgroundImage:
-                  "linear-gradient(rgba(0,0,0,0.502),rgba(0,0,0,0),rgba(0,0,0,0))",
-              }}
-              onClick={handlePlayButton}
-            >
-              <span
-                className={` bg-black rounded-full ${
-                  iconHidden
-                    ? "opacity-75 scale-0"
-                    : "transition duration-500 opacity-0  scale-[4]"
-                }`}
-              >
-                <Icon
-                  name={
-                    currentSong.src !== song.src
-                      ? "play"
-                      : isPaused
-                      ? "pause"
-                      : "play"
-                  }
-                  sizex="50px"
-                />
-              </span>
-            </div>
-          </div>
-        </div>
+        <Cover
+          currentSong={currentSong}
+          handle={handle}
+          handlePlayButton={handlePlayButton}
+          iconHidden={iconHidden}
+          isPaused={isPaused}
+        />
         <div className="bg-black w-[36%] h-full max-w-[800px] ml-24 flex flex-col">
           <div className="w-full justify-between flex">
             <div className="text-white border-b-2 text-center text-sm w-1/3 py-2 font-bold border-white cursor-pointer select-none">
@@ -98,7 +65,7 @@ function FullScreen({ fullScreen, song, controls, state }) {
               RELATED
             </div>
           </div>
-          <FullScreenList song={song} />
+          <FullScreenList currentSong={currentSong} />
         </div>
       </div>
     </div>

@@ -18,7 +18,7 @@ export const domSlicer = createSlice({
       state.isDropdownActive = !state.isDropdownActive;
       state.dropDownElement = action.payload;
     },
-    setFullScreen: (state, action) => {
+    setFullScreen: (state) => {
       state.fullScreen = !state.fullScreen;
     },
   },

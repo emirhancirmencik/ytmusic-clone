@@ -509,7 +509,6 @@ const fullscreenIcon2 = ({ sizex, sizey }) => {
 };
 
 const Icon = ({ name, sizex, sizey = sizex }) => {
-  if (sizex !== sizey) console.log(sizex, sizey);
   const icons = {
     search: searchIcon,
     settings: settingsIcon,

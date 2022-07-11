@@ -1,16 +1,15 @@
 import React from "react";
 import { useSelector } from "react-redux";
-import Cover from "Components/Home/MiniList/Cover";
 import { Icon } from "image/Icons";
 import { useDispatch } from "react-redux";
 import { setCurrentSong, setIsPaused } from "redux/music/musicSlicer";
 import { nanoid } from "@reduxjs/toolkit";
 
-function FullScreenList({ song }) {
+const FullScreenList = React.memo(function FullScreenList({ currentSong }) {
   const musicList = useSelector((state) => state.music.list);
-  const currentSong = useSelector((state) => state.music.currentSong);
   const isPaused = useSelector((state) => state.music.isPaused);
   const dispatch = useDispatch();
+
   function handlePlayButton(song) {
     if (currentSong?.src !== song?.src) {
       dispatch(setCurrentSong(song));
@@ -19,6 +18,7 @@ function FullScreenList({ song }) {
       dispatch(setIsPaused(!isPaused));
     }
   }
+
   return (
     <div className="w-full overflow-y-scroll flex flex-col fullscreen-scrollbar">
       {musicList &&
@@ -28,7 +28,7 @@ function FullScreenList({ song }) {
               className={`group w-full flex pl-3 z-10 relative py-1 border-b-[1px] items-center border-whitealpha3 ${
                 song.src === currentSong.src && "bg-whitealpha3"
               }`}
-              key={nanoid(3)}
+              key={nanoid()}
             >
               <div className="flex cursor-pointer items-center">
                 <div className="relative pt-[100%] w-8 h-8">
@@ -81,6 +81,6 @@ function FullScreenList({ song }) {
         })}
     </div>
   );
-}
+});
 
 export default FullScreenList;

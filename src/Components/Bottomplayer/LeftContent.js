@@ -4,18 +4,17 @@ import { setIsPaused, setCurrentSong } from "../../redux/music/musicSlicer";
 import { useDispatch, useSelector } from "react-redux";
 import { setFullScreen } from "redux/dom/domSlicer";
 
-function LeftContent({ duration, time, controls, audio }) {
+const LeftContent = React.memo(function LeftContent() {
   const dispatch = useDispatch();
   const prev = useSelector((state) => state.music.prevSong);
   const next = useSelector((state) => state.music.nextSong);
+  const isPaused = useSelector((state) => state.music.isPaused);
 
   function handleClick() {
-    if (audio?.paused) {
+    if (isPaused) {
       dispatch(setIsPaused(false));
-      controls.play();
     } else {
       dispatch(setIsPaused(true));
-      controls.pause();
     }
     dispatch(setFullScreen());
   }
@@ -36,7 +35,7 @@ function LeftContent({ duration, time, controls, audio }) {
           className="ml-2 w-14 h-14 p-2 cursor-pointer"
           onClick={handleClick}
         >
-          <Icon sizex="40" name={audio?.paused ? "play" : "pause"} />
+          <Icon sizex="40" name={isPaused ? "play" : "pause"} />
         </div>
         <div
           className="ml-2 p-2 rotate-180 w-10 h-10 cursor-pointer"
@@ -51,13 +50,9 @@ function LeftContent({ duration, time, controls, audio }) {
       <div
         className="flex text-xs text-whitealpha1 ml-2 mr-4"
         onClick={() => dispatch(setFullScreen())}
-      >
-        {" "}
-        {time[0] === "0" ? time.substr(1, 4) : time} /{" "}
-        {duration[0] === "0" ? duration.substr(1, 4) : duration}
-      </div>
+      ></div>
     </div>
   );
-}
+});
 
 export default LeftContent;

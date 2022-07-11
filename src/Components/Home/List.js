@@ -1,4 +1,4 @@
-import React, { useMemo, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import SongListElement from "./SongList/SongListElement";
 import MiniListElement from "./MiniList/MiniListElement";
 import ScrollButtons from "./ScrollButtons";
@@ -11,6 +11,11 @@ function List(props) {
   const ref = useRef(0);
   const type = props.type;
   const _map = Array(5);
+  const [list, setList] = useState([]);
+
+  useEffect(() => {
+    setList([...musicList].sort(() => Math.random() - 0.5));
+  }, []);
 
   return (
     <div className="ytmedmax:w-[1264px] ytmedmin:w-[1489px] pt-8 mx-auto z-20">
@@ -42,11 +47,11 @@ function List(props) {
               return (
                 <div
                   className="mylist flex flex-col-reverse w-1/3 flex-shrink-0"
-                  key={nanoid(3)}
+                  key={nanoid()}
                 >
-                  {musicList.map((song, j) => {
+                  {list?.map((song, j) => {
                     if (j >= i * 4 && j <= (i + 1) * 4 - 1)
-                      return <MiniListElement song={song} key={nanoid(3)} />;
+                      return <MiniListElement song={song} key={nanoid()} />;
                     return "";
                   })}
                 </div>
@@ -56,14 +61,14 @@ function List(props) {
         ) : (
           <>
             <div className="flex mylist justify-between flex-shrink-0">
-              {musicList.map((song, index) => {
+              {list.map((song, index) => {
                 if (index !== 3 && index !== 6 && index !== 9)
-                  return <SongListElement song={song} key={nanoid(3)} />;
+                  return <SongListElement song={song} key={nanoid()} />;
                 else {
                   return (
                     <ArtistListElement
                       artist={artistList[index / 3 - 1]}
-                      key={nanoid(3)}
+                      key={nanoid()}
                     />
                   );
                 }

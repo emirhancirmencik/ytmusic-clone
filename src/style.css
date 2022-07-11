@@ -636,6 +636,13 @@ html::-webkit-scrollbar-thumb:hover,  .overflow-y-scroll::-webkit-scrollbar-thum
   left: 0px;
 }
 
+.-inset-\[100\%\] {
+  top: -100%;
+  right: -100%;
+  bottom: -100%;
+  left: -100%;
+}
+
 .bottom-0 {
   bottom: 0px;
 }
@@ -660,14 +667,6 @@ html::-webkit-scrollbar-thumb:hover,  .overflow-y-scroll::-webkit-scrollbar-thum
   right: 0.75rem;
 }
 
-.top-5 {
-  top: 1.25rem;
-}
-
-.right-5 {
-  right: 1.25rem;
-}
-
 .right-0 {
   right: 0px;
 }
@@ -682,6 +681,14 @@ html::-webkit-scrollbar-thumb:hover,  .overflow-y-scroll::-webkit-scrollbar-thum
 
 .right-4 {
   right: 1rem;
+}
+
+.-top-\[100\%\] {
+  top: -100%;
+}
+
+.top-\[50\%\] {
+  top: 50%;
 }
 
 .z-\[1000\] {
@@ -710,10 +717,6 @@ html::-webkit-scrollbar-thumb:hover,  .overflow-y-scroll::-webkit-scrollbar-thum
 
 .z-10 {
   z-index: 10;
-}
-
-.z-\[998\] {
-  z-index: 998;
 }
 
 .mx-2 {
@@ -1028,8 +1031,16 @@ html::-webkit-scrollbar-thumb:hover,  .overflow-y-scroll::-webkit-scrollbar-thum
   justify-content: space-between;
 }
 
+.place-self-center {
+  place-self: center;
+}
+
 .self-center {
   align-self: center;
+}
+
+.justify-self-center {
+  justify-self: center;
 }
 
 .overflow-hidden {
@@ -1360,6 +1371,10 @@ html::-webkit-scrollbar-thumb:hover,  .overflow-y-scroll::-webkit-scrollbar-thum
 
 .opacity-40 {
   opacity: 0.4;
+}
+
+.opacity-50 {
+  opacity: 0.5;
 }
 
 .transition {
