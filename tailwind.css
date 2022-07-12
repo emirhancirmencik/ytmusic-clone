@@ -19,16 +19,11 @@
   .mylist::-webkit-scrollbar { 
     width: 0 !important;
     overflow-x:-moz-scrollbars-none; 
-    
   }
   .mylist:nth-child(1){
     @apply ml-[-28px]
   }
-  .mylist{
-    margin-bottom:-300px;
-    padding-bottom:300px;
-  }
-  
+    
 html::-webkit-scrollbar,.overflow-y-scroll::-webkit-scrollbar {
   width: 12px;
 }
@@ -58,5 +53,10 @@ html::-webkit-scrollbar-thumb:hover, .overflow-y-scroll::-webkit-scrollbar-thumb
 .fullscreen-transform{
   transform: translateY(calc((100vh - 63px) * -1)) 
 }
+.hidescroll::-webkit-scrollbar { 
+    width: 0 !important;
+    overflow-x:-moz-scrollbars-none; 
+}
+
   
 }

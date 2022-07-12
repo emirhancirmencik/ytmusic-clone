@@ -18,7 +18,7 @@ function List(props) {
   }, []);
 
   return (
-    <div className="ytmedmax:w-[1264px] ytmedmin:w-[1489px] pt-8 mx-auto z-20">
+    <div className="ytmedmax:w-[1264px] ytmedmin:w-[1489px] pt-8 mx-auto mb-14 z-20">
       {props.strapline && (
         <div
           className={`${
@@ -29,11 +29,11 @@ function List(props) {
         </div>
       )}
       <div className="flex justify-between">
-        <h1 className="text-white text-[45px] font-bold">{props.header}</h1>
+        <h2 className="text-white text-[40px] font-bold">{props.header}</h2>
         <ScrollButtons
           element={ref}
           offsetNumber={type === "Mini" ? 3 : 6}
-          elementNumber={type === "Mini" ? _map.length : musicList.length}
+          elementNumber={type === "Mini" ? 5 : 18}
           marginValue={type === "Mini" ? 0 : 14}
         />
       </div>
@@ -50,7 +50,7 @@ function List(props) {
                   key={nanoid()}
                 >
                   {list?.map((song, j) => {
-                    if (j >= i * 4 && j <= (i + 1) * 4 - 1)
+                    if (j >= i * 4 && j <= (i + 1) * 4 - 1 && j <= 20)
                       return <MiniListElement song={song} key={nanoid()} />;
                     return "";
                   })}
@@ -62,15 +62,17 @@ function List(props) {
           <>
             <div className="flex mylist justify-between flex-shrink-0">
               {list.map((song, index) => {
-                if (index !== 3 && index !== 6 && index !== 9)
-                  return <SongListElement song={song} key={nanoid()} />;
-                else {
-                  return (
-                    <ArtistListElement
-                      artist={artistList[index / 3 - 1]}
-                      key={nanoid()}
-                    />
-                  );
+                if (index < 18) {
+                  if (index !== 3 && index !== 6 && index !== 9)
+                    return <SongListElement song={song} key={nanoid()} />;
+                  else {
+                    return (
+                      <ArtistListElement
+                        artist={artistList[index / 3 - 1]}
+                        key={nanoid()}
+                      />
+                    );
+                  }
                 }
               })}
             </div>

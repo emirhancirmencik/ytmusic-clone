@@ -57,9 +57,9 @@ const FullScreenList = React.memo(function FullScreenList({ currentSong }) {
                   </div>
                 </div>
               </div>
-              <div className="flex ml-3 w-2/3 flex-col font-bold text-white whitespace-nowrap text-ellipsis overflow-clip">
+              <div className="flex ml-3 w-full flex-col font-bold text-white ">
                 <div
-                  className="hover:underline cursor-pointer"
+                  className="hover:underline cursor-pointer w-3/4 whitespace-nowrap text-ellipsis overflow-clip"
                   onClick={() => handlePlayButton(song)}
                 >
                   {song.name}

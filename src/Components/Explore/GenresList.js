@@ -16,7 +16,7 @@ function GenresList() {
           element={ref}
           offsetNumber={1}
           elementNumber={13}
-          marginValue={0}
+          marginValue={4.5}
         />
       </div>
 
@@ -28,7 +28,7 @@ function GenresList() {
           {[..._map].map((_, i) => {
             return (
               <div
-                className={`mylist w-1/6 pl-8 pr-2 flex-shrink-0 ${
+                className={`ytmedmin:w-[226.33px] ytmedmax:w-[190.66px] justify-start mr-6 flex-shrink-0 ${
                   i === _map.length - 1 && "mr-16"
                 }`}
                 key={nanoid()}
@@ -37,7 +37,7 @@ function GenresList() {
                   if (j >= i * 4 && j <= (i + 1) * 4 - 1)
                     return (
                       <div
-                        className="flex bg-whitealpha5 hover:bg-black1 py-3 mb-4 pl-5 items-center whitespace-pre-line max-h-12 font-bold text-[14px] border-l-4 rounded"
+                        className="flex bg-whitealpha5 hover:bg-black1 py-3 mb-4 pl-5 items-start  whitespace-pre-line max-h-12 font-bold text-[14px] border-l-[6px] rounded"
                         style={{ borderColor: genre.color }}
                         key={nanoid()}
                       >

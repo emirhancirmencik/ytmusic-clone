@@ -5,7 +5,7 @@ import React from "react";
 
 function Explore() {
   return (
-    <div className="w-full flex flex-col pt-24">
+    <div className="w-full flex flex-col pt-16">
       <NavButtons />
       <List header="New albums & singles" type="Album" />
       <List header="Top songs" type="Mini" />

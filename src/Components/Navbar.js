@@ -15,27 +15,27 @@ function Navbar() {
 
   return (
     <nav
-      className={`h-16 px-4 flex justify-between items-center	box-border transition-[background] duration-500 fixed w-full z-30 ${
+      className={`h-16 px-4 flex justify-between w-fullnotscroll items-center	box-border transition-[background] duration-500 fixed z-30 ${
         scrollPosition.y > 0 || fullScreen
           ? "border-b-[1px] border-b-whitealpha3 bg-black"
           : "bg-transparent "
       } ${isDropdownActive && "w-fullnotscroll"}`}
     >
-      <div className="flex items-center">
+      <div className="inline-block z-10 ">
         <Link to="/">
           <img
             src={logo}
             alt="logo"
-            className="ml-[2px] min-w-[80px] min-h-[24px] smlmax:hidden"
+            className="min-w-[80px] mb-[3px] min-h-[24px] smlmax:hidden"
           />
           <img
             src={minilogo}
             alt="logo"
-            className="ml-[2px] min-w-[24px] min-h-[24px] smlmin:hidden"
+            className="min-w-[24px] mb-[3px] min-h-[24px] smlmin:hidden"
           />
         </Link>
       </div>
-      <div className=" pl-20 tabletmax:pl-0 text-whitealpha1 flex items-center  font-[700] text-[20px] leading-[1.2]">
+      <div className="tabletmax:pl-0 text-whitealpha1 flex items-center absolute w-fullnotscroll justify-center font-[700] text-[20px] leading-[1.2]">
         <CenterContent link="/">Home</CenterContent>
         <CenterContent>Explore</CenterContent>
         <CenterContent>Library</CenterContent>
@@ -44,7 +44,7 @@ function Navbar() {
           <CenterContent>Chromecast</CenterContent>
         </span>
       </div>
-      <div className="h-16 flex items-center justify-between">
+      <div className="h-16 flex z-10 items-center justify-between">
         <div className="p-2 tabletmax:hidden items-start">
           <span href="/" className="cursor-pointer">
             <Icon sizex="26" name="chromecast" />

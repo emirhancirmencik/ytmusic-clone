@@ -7,7 +7,7 @@ import Library from "../views/Library";
 
 function Content() {
   return (
-    <main className="pb-96 w-full">
+    <main className="pb-[112px] w-full">
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />

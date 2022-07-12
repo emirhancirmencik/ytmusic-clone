@@ -18,9 +18,9 @@ function Home() {
         header="Quick picks"
         type="Album"
       />
-      <List header="Quick picks" type="Mini" />
-      <List header="Quick picks" type="Album" />
-      <List header="Quick picks" type="Mini" />
+      <List header="Top Music" type="Mini" />
+      <List header="Feeling Good" type="Album" />
+      <List header="Today's biggest hits" type="Mini" />
     </div>
   );
 }
