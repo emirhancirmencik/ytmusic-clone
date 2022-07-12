@@ -9,7 +9,6 @@ import { nanoid } from "@reduxjs/toolkit";
 
 function List(props) {
   const ref = useRef(0);
-  const type = props.type;
   const _map = Array(5);
   const [list, setList] = useState([]);
 
@@ -32,27 +31,29 @@ function List(props) {
         <h2 className="text-white text-[40px] font-bold">{props.header}</h2>
         <ScrollButtons
           element={ref}
-          offsetNumber={type === "Mini" ? 3 : 6}
-          elementNumber={type === "Mini" ? 5 : 18}
-          marginValue={type === "Mini" ? 0 : 14}
+          offsetNumber={props.type === "Mini" ? 3 : 6}
+          elementNumber={props.type === "Mini" ? 5 : 18}
+          marginValue={props.type === "Mini" ? 0 : 14}
         />
       </div>
       <div
         ref={ref}
         className="flex mylist w-full overflow-x-scroll box-border max-h-30 scroll-smooth mt-5"
       >
-        {type === "Mini" ? (
+        {props.type === "Mini" ? (
           <>
-            {[..._map].map((_, i) => {
+            {[...Array(5)].map((a, i) => {
               return (
                 <div
                   className="mylist flex flex-col w-1/3 flex-shrink-0"
                   key={nanoid()}
                 >
                   {list?.map((song, j) => {
-                    if (j >= i * 4 && j <= (i + 1) * 4 - 1 && j <= 20)
+                    if (j >= i * 4 && j <= (i + 1) * 4 - 1 && j <= 20) {
                       return <MiniListElement song={song} key={nanoid()} />;
-                    return "";
+                    } else {
+                      return "";
+                    }
                   })}
                 </div>
               );

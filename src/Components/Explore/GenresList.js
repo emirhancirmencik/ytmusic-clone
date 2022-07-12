@@ -6,7 +6,6 @@ import { useRef } from "react";
 import genres from "../../static/genres";
 
 function GenresList() {
-  const _map = Array(13);
   const ref = useRef(0);
   return (
     <div className="flex flex-col justify-between ytmedmax:w-[1264px] ytmedmin:w-[1489px] mx-auto z-20 mb-16">
@@ -25,11 +24,11 @@ function GenresList() {
         className="flex mylist w-full overflow-x-scroll scroll-smooth mt-5"
       >
         <div className="flex w-full h-full">
-          {[..._map].map((_, i) => {
+          {[...Array(13)].map((_, i) => {
             return (
               <div
                 className={`ytmedmin:w-[226.33px] ytmedmax:w-[190.66px] justify-start mr-6 flex-shrink-0 ${
-                  i === _map.length - 1 && "mr-16"
+                  i === 13 - 1 && "mr-16"
                 }`}
                 key={nanoid()}
               >
