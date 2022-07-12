@@ -73,6 +73,8 @@ function List(props) {
                       />
                     );
                   }
+                } else {
+                  return "";
                 }
               })}
             </div>

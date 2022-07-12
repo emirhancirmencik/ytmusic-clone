@@ -3,7 +3,6 @@ import ProgressBar from "Components/Bottomplayer/ProgressBar";
 import LeftContent from "Components/Bottomplayer/LeftContent";
 import CenterContent from "Components/Bottomplayer/CenterContent";
 import RightContent from "Components/Bottomplayer/RightContent";
-import { secondsToTime } from "utils";
 import { useDispatch, useSelector } from "react-redux";
 import { setCurrentSong, setIsPaused } from "redux/music/musicSlicer";
 import { Icon } from "image/Icons";

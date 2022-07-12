@@ -1,7 +1,6 @@
 import Content from "Components/Content";
 import BottomPlayer from "Components/BottomPlayer";
 import Dropdown from "Components/Dropdown";
-import FullScreen from "Components/FullScreen";
 import { useSelector } from "react-redux";
 import { useEffect } from "react";
 

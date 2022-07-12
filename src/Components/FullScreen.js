@@ -1,4 +1,3 @@
-import { Icon } from "image/Icons";
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { setCurrentSong, setIsPaused } from "redux/music/musicSlicer";
