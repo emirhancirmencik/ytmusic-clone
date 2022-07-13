@@ -1,4 +1,4 @@
-# Youtube Music Clone
+# Youtube Music Clone :sound:
 
 ![HomePage](./demo2.png)
 
@@ -8,7 +8,7 @@
 
 [Live](https://ytmusic-clone.netlify.app)
 
-## Technologies
+## Technologies & Tools :rocket:
 
 - react
 - react-full-screen
@@ -16,8 +16,9 @@
 - react-router-dom
 - react-use
 - redux
+- tailwind
 
-## Project setup
+## Project setup :gear:
 
 ### Install packages
 
